@@ -1,26 +1,66 @@
-.center-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
+.card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+  transition: box-shadow 0.3s ease;
 }
 
-.centered-button {
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+title {
+  color: grey;
+  font-size: 18px;
+}
+
+.card-title{
+  color: black;
+  text-align: center;
+  text-decoration: solid;
+  text-shadow: #ddd;
+}
+
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+button {
+  margin-top: 10px;
+  display: inline-block;
+  width: 100%;
+  background-color: darkslategrey;
+  color: white;
+  border: none;
   padding: 10px 20px;
   font-size: 16px;
-  left: 50%;
-  top: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-radius: 10px;
 }
 
-.button {
-  appearance: none;
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  height: 50px;
-  width: 200px;
-  left: 50%;
-  top: 50%;
-  margin-top: -15px;
-  margin-left: -100px;
-  position: fixed;
+.image{
+  border-radius: 10%;
+  height: 100%;
+  width: 100%;
+  padding: 10px;
+  margin: 10px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+}
+
+button:hover {
+  background-color: lightslategray;
+  color: white;
+}
+
+.card-header{
+  color: white;
+  font-weight: bold;
+  border-color: white;
+  border-radius: 10px;
 }

@@ -1,3 +1,35 @@
-<div class="center-wrapper">
-  <button class="centered-button btn-primary btn button">Enter the platform</button>
+<br><br>
+<div class="container">
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title text-center">Purpose Form</div>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="purposeForm" (ngSubmit)="onSubmit()">
+            <div class="form-group flex-fill mb-0">
+              <label for="purpose">Let us know your purpose:<span style="color: red;">*</span></label>
+              <div class="input-group">
+                <select class="form-select" id="purpose" formControlName="purpose" required>
+                  <option selected disabled hidden value="">Choose from..</option>
+                  <option value="PROFESSIONAL">Professional</option>
+                  <option value="SOCIAL">Social</option>
+                  <option value="MATRIMONIAL">Matrimonial</option>
+                </select>
+              </div>
+              <small id="purpose" class="form-text text-muted">Please select the purpose of visit to the platform</small>
+            </div>
+            <br>
+            <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+              <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;"
+                [disabled]="purposeForm.invalid">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
 </div>
