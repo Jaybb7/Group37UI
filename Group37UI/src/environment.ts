@@ -1,0 +1,1 @@
+export const STORE_USER_IN_DATABSE = "http://localhost:8080/user/storeUser";
