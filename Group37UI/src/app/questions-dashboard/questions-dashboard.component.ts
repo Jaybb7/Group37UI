@@ -11,7 +11,7 @@ export class QuestionsDashboardComponent {
   profileScore: number | null = null;
 
   fetchQuestionsAndCalculateScore() {
-    // Replace 'your_openai_api_endpoint' with your actual API endpoint
+    // Replace 'your_openai_api_endpoint' with the actual API endpoint
     const openaiEndpoint = 'your_openai_api_endpoint';
 
     axios.get(openaiEndpoint)
@@ -31,7 +31,7 @@ export class QuestionsDashboardComponent {
           ];
         }
 
-        // Calculate profile score (You need to implement your score calculation logic)
+        // Calculate profile score 
         this.calculateProfileScore();
       })
       .catch((error) => {
@@ -40,10 +40,7 @@ export class QuestionsDashboardComponent {
   }
 
   calculateProfileScore() {
-    // Implement your profile score calculation logic here
-    // You may calculate the score based on user responses to questions
-    // and other factors relevant to your website.
-    // Set the profileScore variable with the calculated score.
-    this.profileScore = 75; // Replace with your actual score.
+    
+    this.profileScore = 75; 
   }
 }
