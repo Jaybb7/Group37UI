@@ -4,7 +4,6 @@ import { SocialDataService } from './social-data.service';
 @Component({
   selector: 'app-social-dashboard',
   templateUrl: './social-dashboard.component.html',
-  styleUrls: ['./social-dashboard.component.css']
 })
 export class SocialDashboardComponent implements OnInit {
   userProfile: any;
