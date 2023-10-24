@@ -1,0 +1,956 @@
+.scrollbar,
+.scrollbar-2 {
+  position: absolute;
+  width: 14px;
+  height: 3111px;
+}
+.scrollbar {
+  top: 0;
+  left: 0;
+  border-radius: var(--br-mini);
+  background-color: var(--color-whitesmoke-300);
+}
+.scrollbar-2 {
+  top: 110px;
+  left: 1890px;
+}
+.business-matches-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-3xs);
+  background-color: var(--color-lightsteelblue-300);
+  width: 591px;
+  height: 533px;
+}
+.business,
+.recent-match {
+  position: absolute;
+  top: 20px;
+  left: 374px;
+  color: var(--color-lightsteelblue-200);
+}
+.recent-match {
+  left: 41px;
+}
+.other-matches-icon {
+  position: absolute;
+  top: 367px;
+  left: 29px;
+  width: 533px;
+  height: 110px;
+  overflow: hidden;
+}
+.other-matches {
+  position: absolute;
+  top: 313px;
+  left: 29px;
+}
+.blank-line {
+  margin: 0;
+}
+.name-age {
+  margin: 0;
+  color: var(--color-black);
+}
+.occupation {
+  margin: 0;
+  color: var(--color-gainsboro);
+}
+.name-age-occupation-container {
+  position: absolute;
+  top: 18px;
+  left: 209px;
+}
+.icon-person {
+  position: relative;
+  width: 94.9px;
+  height: 94.9px;
+}
+.profile-pic {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-71xl);
+  background-color: var(--color-darkgray);
+  border: 6px solid var(--color-white);
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-23xl);
+}
+.button-recentmatch {
+  position: absolute;
+  top: 88px;
+  left: 41px;
+  border-radius: var(--br-11xl);
+  background-color: var(--color-whitesmoke-200);
+  width: 509px;
+  height: 179px;
+  overflow: hidden;
+}
+.see-all {
+  position: relative;
+  text-decoration: underline;
+}
+.button-seeall {
+  position: absolute;
+  top: 305px;
+  left: 424px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-3xs);
+  font-size: var(--font-size-11xl);
+}
+.business-matches,
+.dating-matches-child {
+  border-radius: var(--br-3xs);
+  width: 591px;
+  height: 533px;
+}
+.business-matches {
+  position: relative;
+  background-color: var(--color-white);
+  box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.dating-matches-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color-steelblue-100);
+}
+.dating {
+  position: absolute;
+  top: 20px;
+  left: 423px;
+}
+.button-seeall1,
+.recent-match1 {
+  position: absolute;
+  top: 20px;
+  left: 41px;
+}
+.button-seeall1 {
+  top: 305px;
+  left: 424px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-3xs);
+  font-size: var(--font-size-11xl);
+  color: var(--color-lightskyblue-100);
+}
+.dating-matches,
+.social-matches-child {
+  border-radius: var(--br-3xs);
+  width: 591px;
+  height: 533px;
+}
+.dating-matches {
+  position: relative;
+  background-color: var(--color-white);
+  box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  flex-shrink: 0;
+  color: var(--color-lightskyblue-200);
+}
+.social-matches-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color-mediumturquoise);
+}
+.social {
+  position: absolute;
+  top: 20px;
+  left: 426px;
+}
+.back,
+.social-matches {
+  border-radius: var(--br-3xs);
+  background-color: var(--color-white);
+  width: 591px;
+}
+.social-matches {
+  position: relative;
+  box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.25);
+  height: 533px;
+  overflow: hidden;
+  flex-shrink: 0;
+  color: var(--color-paleturquoise-100);
+}
+.back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 1392px;
+}
+.blank-line3 {
+  margin: 0;
+  color: var(--color-lightsteelblue-100);
+}
+.company-name-location-container,
+.logo {
+  position: absolute;
+  top: 18px;
+  left: 159px;
+}
+.logo {
+  top: 41px;
+  left: 29px;
+}
+.button-company,
+.button-company1,
+.profile-pic3 {
+  position: absolute;
+  border-radius: var(--br-11xl);
+  overflow: hidden;
+}
+.profile-pic3 {
+  top: 8px;
+  left: 20px;
+  background-color: var(--color-darkgray);
+  border: 6px solid var(--color-white);
+  box-sizing: border-box;
+  width: 106px;
+  height: 106px;
+  color: var(--color-black);
+}
+.button-company,
+.button-company1 {
+  top: 1230px;
+  left: 39px;
+  background-color: var(--color-whitesmoke-200);
+  width: 509px;
+  height: 122px;
+  color: var(--color-gainsboro);
+}
+.button-company1 {
+  top: 1077px;
+}
+.companies {
+  position: absolute;
+  top: 1022px;
+  left: 252px;
+  color: var(--color-darkgray);
+}
+.group-name-interest-container {
+  position: absolute;
+  top: 17px;
+  left: 28px;
+}
+.profile-pic-icon,
+.profile-pic-icon1 {
+  position: absolute;
+  top: 17px;
+  left: 402px;
+  border-radius: var(--br-31xl);
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+}
+.profile-pic-icon1 {
+  height: 81.97%;
+  width: 19.65%;
+  top: 13.93%;
+  right: 17.09%;
+  bottom: 4.1%;
+  left: 63.26%;
+  max-width: 100%;
+  max-height: 100%;
+}
+.button-group,
+.button-group1,
+.profile-pic-icon2,
+.profile-pic-icon3 {
+  position: absolute;
+  top: 17px;
+  left: 242px;
+  border-radius: var(--br-31xl);
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+}
+.button-group,
+.button-group1,
+.profile-pic-icon3 {
+  left: 162px;
+}
+.button-group,
+.button-group1 {
+  top: 869px;
+  left: 39px;
+  border-radius: var(--br-11xl);
+  background-color: var(--color-whitesmoke-200);
+  width: 509px;
+  height: 122px;
+}
+.button-group1 {
+  top: 716px;
+}
+.groups {
+  position: absolute;
+  top: 661px;
+  left: 269px;
+  color: var(--color-darkgray);
+}
+.profile-pic-icon8 {
+  position: absolute;
+  top: 11px;
+  left: 20px;
+  border-radius: var(--br-31xl);
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+}
+.button-potentialmatch,
+.button-potentialmatch1,
+.button-potentialmatch2 {
+  position: absolute;
+  top: 508px;
+  left: 43px;
+  border-radius: var(--br-11xl);
+  background-color: var(--color-whitesmoke-200);
+  width: 509px;
+  height: 122px;
+  overflow: hidden;
+}
+.button-potentialmatch1,
+.button-potentialmatch2 {
+  top: 343px;
+  left: 39px;
+}
+.button-potentialmatch2 {
+  top: 178px;
+  left: 43px;
+}
+.potential-matches {
+  position: absolute;
+  top: 124px;
+  left: 190px;
+  color: var(--color-darkgray);
+}
+.explore-child {
+  position: absolute;
+  top: 92.5px;
+  left: 45.5px;
+  border-top: 1px solid var(--color-darkgray);
+  box-sizing: border-box;
+  width: 501px;
+  height: 1px;
+}
+.explore1 {
+  position: absolute;
+  top: 20px;
+  left: 185px;
+  font-size: var(--font-size-31xl);
+  color: var(--color-darkgray);
+}
+.explore {
+  position: relative;
+  border-radius: var(--br-3xs);
+  background-color: var(--color-white);
+  box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.25);
+  width: 591px;
+  height: 1392px;
+  overflow: hidden;
+  flex-shrink: 0;
+  font-size: var(--font-size-xl);
+}
+.matches-explore {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-11xl) var(--padding-3xs);
+  gap: var(--gap-21xl);
+}
+.column-2 {
+  position: absolute;
+  top: 80px;
+  left: 1269px;
+  background-color: var(--color-white);
+  width: 621px;
+  height: 1000px;
+  overflow-y: auto;
+  color: var(--color-lightsteelblue-100);
+}
+.scrollbar-1,
+.white {
+  position: absolute;
+  top: 110px;
+  left: 1247px;
+  width: 14px;
+  height: 3111px;
+}
+.white {
+  top: 0;
+  left: 0;
+  background-color: var(--color-white);
+  width: 1209px;
+  height: 745px;
+}
+.full-name-age,
+.occupation6 {
+  position: absolute;
+  top: 481px;
+  left: 54px;
+}
+.occupation6 {
+  top: 543px;
+  font-size: var(--font-size-11xl);
+  color: var(--color-gainsboro);
+}
+.other-quality {
+  margin-bottom: 0;
+}
+.other-quality-other-quality-ho {
+  margin: 0;
+  padding-left: 27px;
+}
+.other-quality-other-container {
+  position: absolute;
+  top: 593px;
+  left: 54px;
+  font-size: var(--font-inherit);
+  font-family: var(--font-inherit);
+}
+.if-the-user-chooses-not-to-hav {
+  margin: 0;
+  padding-left: var(--padding-base);
+}
+.notes-for-these-container {
+  position: absolute;
+  top: 549px;
+  left: 357px;
+  font-size: var(--font-inherit);
+  font-family: var(--font-inherit);
+}
+.button-documents-icon {
+  position: absolute;
+  top: 474px;
+  left: 524px;
+  width: 48px;
+  height: 55px;
+  overflow: hidden;
+}
+.button-email-icon,
+.button-phonenumber-icon {
+  position: absolute;
+  top: 491px;
+  left: 448px;
+  width: 50px;
+  height: 38px;
+  overflow: hidden;
+}
+.button-phonenumber-icon {
+  top: 476px;
+  left: 389px;
+  width: 33px;
+  height: 53px;
+}
+.icon-cog {
+  position: relative;
+  width: 40px;
+  height: 40px;
+}
+.button-settings {
+  position: absolute;
+  top: 418px;
+  left: 1149px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.background-picture {
+  position: relative;
+}
+.button-backgroundpic {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color-gainsboro);
+  width: 1209px;
+  height: 398px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 62px 354px;
+  box-sizing: border-box;
+}
+.button-profilepic-icon {
+  position: relative;
+  border-radius: 125px;
+  width: 250px;
+  height: 250px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.button-profilepic {
+  position: absolute;
+  top: 223px;
+  left: 54px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.main-profile {
+  position: relative;
+  border-radius: var(--br-mini);
+  background-color: var(--color-white);
+  box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.25);
+  width: 1209px;
+  height: 745px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.button-recentsocial-child,
+.chats-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1209px;
+}
+.chats-child {
+  border-radius: var(--br-3xs);
+  background-color: var(--color-white);
+  height: 676px;
+}
+.button-recentsocial-child {
+  background-color: var(--color-mediumturquoise);
+  height: 186px;
+}
+.profile-pic5 {
+  position: absolute;
+  top: 4px;
+  left: 15px;
+  border-radius: var(--br-71xl);
+  background-color: var(--color-darkgray);
+  border: 6px solid var(--color-white);
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-23xl);
+}
+.occupation7 {
+  position: absolute;
+  top: 32px;
+  left: 422px;
+  color: var(--color-gainsboro);
+}
+.name-age6 {
+  position: absolute;
+  top: 22px;
+  left: 230px;
+  font-size: var(--font-size-11xl);
+}
+.recent-message-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-3xs);
+  background-color: var(--color-paleturquoise-100);
+  width: 939px;
+  height: 45px;
+}
+.recent-message,
+.recent-message-eg {
+  position: absolute;
+  top: 11px;
+  left: 20px;
+}
+.recent-message {
+  top: 93px;
+  left: 230px;
+  width: 939px;
+  height: 45px;
+  overflow: hidden;
+}
+.social1 {
+  position: absolute;
+  top: 10px;
+  left: 1126px;
+  color: var(--color-paleturquoise-100);
+}
+.button-recentsocial {
+  position: absolute;
+  top: 490px;
+  left: 0;
+  width: 1209px;
+  height: 186px;
+  overflow: hidden;
+}
+.button-recentdating-child,
+.recent-message-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color-steelblue-100);
+  width: 1209px;
+  height: 186px;
+}
+.recent-message-item {
+  border-radius: var(--br-3xs);
+  background-color: var(--color-lightskyblue-100);
+  width: 939px;
+  height: 45px;
+}
+.dating1,
+.occupation8 {
+  position: absolute;
+  top: 10px;
+  left: 1125px;
+  color: var(--color-lightsteelblue-200);
+}
+.occupation8 {
+  top: 29px;
+  left: 422px;
+  color: var(--color-gainsboro);
+}
+.name-age7 {
+  position: absolute;
+  top: 19px;
+  left: 230px;
+  font-size: var(--font-size-11xl);
+}
+.button-recentdating {
+  position: absolute;
+  top: 304px;
+  left: 0;
+  width: 1209px;
+  height: 186px;
+  overflow: hidden;
+}
+.button-recentbusiness-child,
+.recent-message-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color-lightsteelblue-300);
+  width: 1209px;
+  height: 186px;
+}
+.recent-message-inner {
+  border-radius: var(--br-3xs);
+  background-color: var(--color-lightsteelblue-200);
+  width: 939px;
+  height: 45px;
+}
+.business1 {
+  position: absolute;
+  top: 10px;
+  left: 1100px;
+  color: var(--color-lightsteelblue-200);
+}
+.button-recentbusiness {
+  position: absolute;
+  top: 118px;
+  left: 0;
+  width: 1209px;
+  height: 186px;
+  overflow: hidden;
+}
+.chats-item {
+  position: absolute;
+  top: 88.5px;
+  left: 431.5px;
+  border-top: 1px solid var(--color-darkgray);
+  box-sizing: border-box;
+  width: 346px;
+  height: 1px;
+}
+.button-seeall3,
+.chats1 {
+  position: absolute;
+  top: 20px;
+  color: var(--color-darkgray);
+}
+.button-seeall3 {
+  left: 1051px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-3xs);
+  font-size: var(--font-size-11xl);
+}
+.chats1 {
+  left: 537px;
+  font-size: var(--font-size-31xl);
+}
+.chats,
+.job-feed-child,
+.job-post-back {
+  border-radius: var(--br-3xs);
+  background-color: var(--color-white);
+  width: 1209px;
+}
+.chats {
+  position: relative;
+  box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.25);
+  height: 676px;
+  overflow: hidden;
+  flex-shrink: 0;
+  font-size: var(--font-size-xl);
+}
+.job-feed-child,
+.job-post-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 1610px;
+}
+.job-post-back {
+  border-radius: var(--br-xl);
+  background-color: var(--color-whitesmoke-200);
+  width: 1169px;
+  height: 431px;
+}
+.job-title {
+  margin: 0;
+  font-size: var(--font-size-31xl);
+}
+.job-title-company-container {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: var(--color-black);
+}
+.button-contact,
+.button-seemore {
+  top: 349px;
+  background-color: var(--color-cornflowerblue);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-3xs);
+}
+.button-seemore {
+  position: absolute;
+  left: 357px;
+  border-radius: var(--br-3xs);
+}
+.button-contact {
+  left: 170px;
+}
+.button-apply,
+.button-contact,
+.job-picture-child {
+  position: absolute;
+  border-radius: var(--br-3xs);
+}
+.button-apply {
+  top: 349px;
+  left: 20px;
+  background-color: var(--color-cornflowerblue);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-3xs);
+}
+.job-picture-child {
+  top: 0;
+  left: 0;
+  background-color: var(--color-gainsboro);
+  width: 501px;
+  height: 341px;
+}
+.job-picture,
+.job-picture1 {
+  position: absolute;
+  top: 129px;
+  left: 157px;
+}
+.job-picture {
+  top: 45px;
+  left: 648px;
+  width: 501px;
+  height: 341px;
+  overflow: hidden;
+  color: var(--color-black);
+}
+.job-post,
+.job-post1,
+.job-post2 {
+  position: absolute;
+  top: 149px;
+  left: 20px;
+  width: 1169px;
+  height: 431px;
+  overflow: hidden;
+}
+.job-post1,
+.job-post2 {
+  top: 636px;
+}
+.job-post2 {
+  top: 1123px;
+}
+.job-feed-item {
+  position: absolute;
+  top: 88.5px;
+  left: 303.5px;
+  border-top: 1px solid var(--color-darkgray);
+  box-sizing: border-box;
+  width: 603px;
+  height: 1px;
+}
+.job-feed1 {
+  position: absolute;
+  top: 20px;
+  left: 486px;
+  font-size: var(--font-size-31xl);
+  color: var(--color-darkgray);
+}
+.job-feed,
+.profile-chats-jobs {
+  border-radius: var(--br-3xs);
+  overflow: hidden;
+}
+.job-feed {
+  position: relative;
+  background-color: var(--color-white);
+  box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.25);
+  width: 1209px;
+  height: 1610px;
+  flex-shrink: 0;
+  font-size: var(--font-size-16xl);
+  color: var(--color-white);
+}
+.profile-chats-jobs {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-11xl) var(--padding-3xs);
+  gap: var(--gap-21xl);
+}
+.column-1 {
+  position: absolute;
+  top: 80px;
+  left: 10px;
+  background-color: var(--color-white);
+  width: 1237px;
+  height: 1000px;
+  overflow-y: auto;
+}
+.top-bar-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color-whitesmoke-100);
+  width: 1920px;
+  height: 80px;
+}
+.aimate {
+  position: absolute;
+  top: 16px;
+  left: 30px;
+  font-size: var(--font-size-21xl);
+}
+.search-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color-lavender);
+  width: 528px;
+  height: 49px;
+}
+.search-icon {
+  position: absolute;
+  height: 71.43%;
+  width: 6.63%;
+  top: 14.29%;
+  right: 89.96%;
+  bottom: 14.29%;
+  left: 3.41%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.search-for-connections {
+  position: absolute;
+  top: 7px;
+  left: 76px;
+  display: inline-block;
+  width: 657px;
+}
+.search {
+  position: absolute;
+  top: 15px;
+  left: 1362px;
+  border-radius: var(--br-3xs);
+  width: 528px;
+  height: 49px;
+  overflow: hidden;
+  color: var(--color-lightsteelblue-300);
+}
+.top-bar-item {
+  position: absolute;
+  top: 14.5px;
+  left: 1331.5px;
+  background-color: var(--color-gainsboro);
+  border-right: 1px solid var(--color-silver);
+  box-sizing: border-box;
+  width: 1px;
+  height: 51px;
+}
+.home-dashboard {
+  position: absolute;
+  top: 21px;
+  left: 1033px;
+  color: var(--color-darkgray);
+}
+.top-bar-inner {
+  position: absolute;
+  top: 14.5px;
+  left: 1002.5px;
+  background-color: var(--color-gainsboro);
+  border-right: 1px solid var(--color-silver);
+  box-sizing: border-box;
+  width: 1px;
+  height: 51px;
+}
+.top-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  width: 1920px;
+  height: 80px;
+  overflow: hidden;
+  font-size: var(--font-size-11xl);
+}
+.profile-page {
+  position: relative;
+  background-color: var(--color-white);
+  width: 100%;
+  height: 1080px;
+  text-align: left;
+  font-size: var(--font-size-21xl);
+  color: var(--color-black);
+  font-family: var(--font-inter);
+}

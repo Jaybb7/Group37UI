@@ -11,6 +11,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { OAuthModule } from 'angular-oauth2-oidc';
 import { AuthService } from './services/Auth/auth.service';
 import { QuestionsDashboardComponent } from './questions-dashboard/questions-dashboard.component';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { QuestionsDashboardComponent } from './questions-dashboard/questions-das
     AppRoutingModule,
     HttpClientModule,
     OAuthModule.forRoot(),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [ConfigService,AuthService],
   bootstrap: [AppComponent]
