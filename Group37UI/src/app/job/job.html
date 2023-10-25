@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Profile Page</title>
+    <title>Job Dashboard</title>
     <!-- Include your CSS and JavaScript dependencies here if needed -->
 </head>
 <body>
@@ -16,47 +16,43 @@
                     <div class="card-body">
                         <img [src]="userProfile.profileImageUrl" alt="User Profile Image" class="img-fluid rounded-circle">
                         <h5 class="card-title">{{ userProfile.userName }}</h5>
-                        <p class="card-text">{{ userProfile.bio }}</p>
+                        <p class="card-text">{{ userProfile.jobTitle }}</p>
                     </div>
                 </div>
 
-                <!-- Friends List (you can fetch this dynamically from a service) -->
+                <!-- Connections or Network (you can fetch this dynamically from a service) -->
                 <div class="card mb-3">
                     <div class="card-body">
-                        <h5 class="card-title">Friends</h5>
+                        <h5 class="card-title">Connections</h5>
                         <ul class="list-group">
-                            <li class="list-group-item" *ngFor="let friend of friendsList">{{ friend }}</li>
-                            <!-- Add more friends here -->
+                            <li class="list-group-item" *ngFor="let connection of connections">{{ connection }}</li>
+                            <!-- Add more connections here -->
                         </ul>
                     </div>
                 </div>
             </div>
 
-            <!-- Main Content - News Feed -->
+            <!-- Main Content - Job Posts -->
             <div class="col-md-6">
 
-                <!-- Create Post Section -->
+                <!-- Create Job Post Section -->
                 <div class="card mb-3">
                     <div class="card-body">
-                        <h5 class="card-title">Create a Post</h5>
-                        <textarea class="form-control" rows="4" placeholder="What's on your mind?" formControlName="newPostContent">
+                        <h5 class="card-title">Create a Job Post</h5>
+                        <textarea class="form-control" rows="4" placeholder="Job details and requirements" formControlName="newJobPostContent">
                         </textarea>
-                        <button class="btn btn-primary mt-2" (click)="createPost()">Post</button>
+                        <button class="btn btn-primary mt-2" (click)="createJobPost()">Post</button>
                     </div>
                 </div>
 
-                <!-- Display Posts (you can fetch these dynamically from a service) -->
-                <div class="card mb-3" *ngFor="let post of posts">
+                <!-- Display Job Posts (you can fetch these dynamically from a service) -->
+                <div class="card mb-3" *ngFor="let jobPost of jobPosts">
                     <div class="card-body">
-                        <!-- Sample Post -->
-                        <div class="media">
-                            <img [src]="post.authorImageUrl" alt="Post Author" class="mr-3 rounded-circle" style="width: 50px;">
-                            <div class="media-body">
-                                <h5 class="mt-0">{{ post.authorName }}</h5>
-                                <p>{{ post.content }}</p>
-                            </div>
-                        </div>
-                        <!-- Add more posts here -->
+                        <!-- Sample Job Post -->
+                        <h5 class="mt-0">{{ jobPost.jobTitle }}</h5>
+                        <p>{{ jobPost.companyName }}</p>
+                        <p>{{ jobPost.jobDescription }}</p>
+                        <!-- Add more job posts here -->
                     </div>
                 </div>
             </div>
