@@ -8,7 +8,10 @@ export class ConfigService {
   constructor() { }
 
   LogoutFlag:boolean = false;
-  DashboardFlag:boolean = false;
+  MatrimonialFlag:boolean = false;
+  SocialFlag:boolean = false;
+  ProfessionalFlag:boolean = false;
   ProfileFlag:boolean = false;
+  MessageFlag:boolean = false;
 
 }
