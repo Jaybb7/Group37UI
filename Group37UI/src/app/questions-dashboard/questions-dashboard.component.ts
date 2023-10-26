@@ -1,20 +1,33 @@
-import { Component } from '@angular/core';
-import axios from 'axios'; // Import Axios
-
+import { Component, OnInit } from '@angular/core';
+import axios from 'axios'; 
+import { ActivatedRoute } from '@angular/router'; // Import ActivatedRoute
 
 @Component({
   selector: 'app-questions-dashboard',
   templateUrl: './questions-dashboard.component.html',
   styleUrls: ['./questions-dashboard.component.css']
 })
-export class QuestionsDashboardComponent {
+export class QuestionsDashboardComponent implements OnInit {
   questions: string[] = [];
   profileScore: number | null = null;
   userAnswers: { [key: string]: string } = {};
+  currentPurpose: string = "null";
+  constructor(private route: ActivatedRoute) { } // Inject ActivatedRoute
+  testAnswer1: string ="null";
+  testAnswer2: string ="null";
+  testAnswer3: string ="null";
+  userId: string = "null";
+  ngOnInit() {
+    // Fetch purpose from the query parameters and then call fetchQuestions
+    this.route.queryParams.subscribe(params => {
+      this.currentPurpose = params['purpose'];
+      this.userId = params['userId'];
+      this.fetchQuestions();
+    });
+  }
 
   fetchQuestions() {
-    // Replace 'your_openai_api_endpoint' with the actual API endpoint
-    const openaiEndpoint = 'your_openai_api_endpoint';
+    const openaiEndpoint = `http://localhost:8080/ai/generateQuestions?purpose=${this.currentPurpose}`;
 
     axios.get(openaiEndpoint)
       .then((response) => {
@@ -23,48 +36,37 @@ export class QuestionsDashboardComponent {
         if (data.questions && data.questions.length > 0) {
           this.questions = data.questions;
         } else {
-          // If no questions received from API, provide dummy questions
-          this.questions = [
-            'What is your favorite book?',
-            'What is your dream vacation destination?',
-            'Describe your ideal partner.',
-            'What are your hobbies and interests?',
-            'Share a memorable life experience.'
-          ];
+          this.provideDummyQuestions();
         }
       })
       .catch((error) => {
-        // If the API call fails, provide dummy questions
         console.error('Error fetching questions:', error);
-        this.questions = [
-          'What is your favorite book?',
-          'What is your dream vacation destination?',
-          'Describe your ideal partner.',
-          'What are your hobbies and interests?',
-          'Share a memorable life experience.'
-        ];
+        this.provideDummyQuestions();
       });
+  }
+
+  provideDummyQuestions() {
+    this.questions = [
+      'What is your favorite book?',
+      'What is your dream vacation destination?',
+      'Describe your ideal partner.'
+    ];
   }
 
   calculateProfileScore() {
     // Calculate profile score (dummy score for demonstration purposes)
     this.profileScore = 75;
   }
-  userAnswersComplete: boolean = false;
-
 
   getProfileScore() {
     // Replace 'your_openai_api_endpoint' with the actual API endpoint for sending user answers
-    const openaiEndpoint = 'your_openai_api_endpoint';
+    const openaiEndpoint = `http://localhost:8080/gcp/askGCP?purpose=${this.currentPurpose}&answer1=${this.testAnswer1}&answer2=${this.testAnswer2}&answer3=${this.testAnswer3}&userId=${this.userId}`;
 
-    // Replace this with code to send user answers to the API
-    axios.post(openaiEndpoint, { answers: this.userAnswers })
+    axios.post(openaiEndpoint)
       .then((response) => {
-        // If successful, set the profile score from the API response
         this.profileScore = response.data.score;
       })
       .catch((error) => {
-        // If the API call fails, call the calculateProfileScore function with a dummy score
         console.error('Error fetching profile score:', error);
         this.calculateProfileScore();
       });

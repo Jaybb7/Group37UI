@@ -8,9 +8,13 @@
 
 <!-- Add a form for user answers -->
 <form (submit)="getProfileScore()" class="mt-3">
-  <div *ngFor="let question of questions">
+  <div *ngFor="let question of questions; let i = index">
     <label>{{ question }}</label>
-    <input type="text" [(ngModel)]="userAnswers[question]" name="{{ question }}" class="form-control" required>
+    <input type="text" 
+           [(ngModel)]="i === 0 ? testAnswer1 : i === 1 ? testAnswer2 : i === 2 ? testAnswer3 : userAnswers[question]" 
+           name="{{ question }}" 
+           class="form-control" 
+           required>
   </div>
   <button type="submit" class="btn btn-primary">Calculate Profile Score</button>
 </form>

@@ -1,20 +1,80 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="/">AIMATE</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <a class="navbar-brand" routerLink="/">Purpose Page</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item" *ngIf="configService.DashboardFlag">
-        <a class="nav-link" href="#">Dashboard</a>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/dashboard/matrimonial">Matrimonial</a>
       </li>
-      <li class="nav-item" *ngIf="configService.ProfileFlag">
-        <a class="nav-link" href="#">Profile</a>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/dashboard/social">Social</a>
       </li>
-      <li class="nav-item" *ngIf="configService.LogoutFlag">
-        <a class="nav-link " href="#">Logout</a>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/dashboard/job">Professional</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/profile">Profile</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="modal" data-target="#sendAMessagemodal" (click)="messagesService.getMessage()">Message</a>
       </li>
     </ul>
   </div>
 </nav>
+
+<!-- SEND MESSAGE MODAL -->
+<div class="modal fade" id="sendAMessagemodal" tabindex="-1" role="dialog" aria-labelledby="sendAMessagemodal"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="sendAMessagemodal">Messages</h5>
+        <a type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+            class="sr-only">Close</span></a>
+      </div>
+      <div class="modal-body" style="max-height: 600px; overflow-y: auto;">
+        <div *ngIf="messagesService.messages.length==0">
+          <p style="text-align: center;">Sorry, No new messages.</p>
+        </div>
+        <div *ngIf="messagesService.messages.length!=0">
+          <div *ngFor="let message of messagesService.messages">
+            <div class="card">
+              <div class="message">
+                <small>{{message.user}} : {{message.message}}</small>
+                <small>{{message.timeStamp}}</small>
+              </div>
+            </div>
+            <br>
+          </div>
+        </div>
+        <button type="button" class="button" (click)="toggleDropdown()" style="width: 100%;">Wanna Send A
+          Message</button>
+        <div *ngIf="isDropdownOpen">
+          <br>
+          <form [formGroup]="messageForm">
+            <div class="form-group flex-fill mb-0">
+              <label class="form-label" for="to">Whom do you want to send a message ? </label>
+              <input type="text" id="to" class="form-control" formControlName="to" required
+                placeholder="Username" />
+              <small id="to" class="form-text text-muted">Please Enter the Username.</small>
+            </div>
+            <div class="form-group flex-fill mb-0">
+              <label class="form-label" for="messageContent">Message</label>
+              <input type="text" id="message" class="form-control" formControlName="message" required
+                placeholder="Message" />
+              <small id="message" class="form-text text-muted">Please be respectful.</small>
+            </div>
+            <br>
+            <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+              <button type="submit" class="button" style="width: 100%;" (click)="sendMessage()"
+                [disabled]="messageForm.invalid">Send</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

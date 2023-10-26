@@ -6,16 +6,17 @@ import { SocialDashboardComponent } from './social/social-dashboard.component';
 //import { JobDashboardComponent } from './job-dashboard/job-dashboard.component';
 import { QuestionsDashboardComponent } from './questions-dashboard/questions-dashboard.component';
 import { ProfilePageComponent } from './profile/profile.component';
-import { PurposeComponent } from './purpose/purpose-component';
+import { HomeComponent } from './home/home.component';
 import { JobDashboardComponent } from './job/job.component';
 const routes: Routes = [
   
   { path: 'dashboard/social', component: SocialDashboardComponent },
   { path: 'questions', component: QuestionsDashboardComponent },
   {path:'profile',component:ProfilePageComponent },
-  {path:'',component:PurposeComponent},
+  {path:'',component:HomeComponent},
   {path:'dashboard/matrimonial',component: MatrimonialComponent},
   {path:'dashboard/job-search',component: JobDashboardComponent}
+  
 
   
 ];
