@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Profile Page</title>
     <!-- Include your CSS and JavaScript dependencies here if needed -->
 </head>
+
 <body>
-    <div class="container mt-5" >
+    <div class="container mt-5">
         <div class="row">
             <!-- Left Sidebar - User Profile -->
             <div class="col-md-3">
@@ -39,8 +41,17 @@
                 <div class="card mb-3">
                     <div class="card-body">
                         <h5 class="card-title">Create a Post</h5>
-                        <textarea class="form-control" rows="4" placeholder="What's on your mind?" formControlName="newPostContent">
-                        </textarea>
+
+                        <!-- Updated Form Fields to match backend structure -->
+                        <input type="text" class="form-control mb-2" placeholder="Post Title" formControlName="postTitle">
+                        <input type="text" class="form-control mb-2" placeholder="Post Benefits" formControlName="postBenefits">
+                        <input type="text" class="form-control mb-2" placeholder="Post Salary" formControlName="postSalary">
+                        <textarea class="form-control mb-2" rows="2" placeholder="Description" formControlName="desc"></textarea>
+                        <textarea class="form-control mb-2" rows="2" placeholder="Requirements" formControlName="requirements"></textarea>
+                        <input type="text" class="form-control mb-2" placeholder="Post Location" formControlName="postLocation">
+                        <input type="text" class="form-control mb-2" placeholder="Point of Contact" formControlName="postPointOfContact">
+                        <input type="text" class="form-control mb-2" placeholder="User ID" formControlName="userId">
+
                         <button class="btn btn-primary mt-2" (click)="createPost()">Post</button>
                     </div>
                 </div>
@@ -69,4 +80,5 @@
     </div>
     <!-- Include your JavaScript or Angular scripts here if needed -->
 </body>
+
 </html>

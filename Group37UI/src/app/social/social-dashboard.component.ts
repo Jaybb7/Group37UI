@@ -17,7 +17,14 @@ export class SocialDashboardComponent implements OnInit {
     private formBuilder: FormBuilder // Inject FormBuilder
   ) {
     this.newPostForm = this.formBuilder.group({
-      newPostContent: [''], // Initialize the form control with an empty string
+      postTitle: [''],
+      postBenefits: [''],
+      postSalary: [''],
+      desc: [''],
+      requirements: [''],
+      postLocation: [''],
+      postPointOfContact: [''],
+      userId: ['']
     });
   }
 
@@ -74,26 +81,14 @@ export class SocialDashboardComponent implements OnInit {
         this.friendsList = ['Friend 1', 'Friend 2', 'Friend 3'];
       });
   }
-  // Function to create a new post
   createPost() {
-    const newPostContent = this.newPostForm.value.newPostContent; // Get the input value from the form
+    const formData = this.newPostForm.value;
 
-    if (!newPostContent) {
-      // Do not create an empty post
-      return;
-    }
-
-    // Send a POST request to your backend to create the post
     axios
-      .post('/api/posts', { content: newPostContent })
+      .post('http://localhost:8080/post/setPost', formData)
       .then((response) => {
-        // Handle successful post creation, if needed
         console.log('Post created:', response.data);
-
-        // Clear the form control after creating the post
-        this.newPostForm.patchValue({
-          newPostContent: '',
-        });
+        this.newPostForm.reset();
 
         // Fetch posts again to update the list with the newly created post
         this.socialDataService.getPosts().subscribe((posts) => {
@@ -105,4 +100,3 @@ export class SocialDashboardComponent implements OnInit {
       });
   }
 }
-
