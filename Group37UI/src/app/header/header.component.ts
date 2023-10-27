@@ -53,33 +53,17 @@ export class HeaderComponent implements OnInit {
       console.log(this.state.get(configKey, undefined as any));
     }
   
-    console.log(this.voiceHandler); // This should print the updated value
+    console.log(this.voiceHandler); 
   }
 
 
 
-  // public voiceSearch() {
-  //   if ("webkitSpeechRecognition" in window) {
-  //     const vSearch = new webkitSpeechRecognition();
-  //     vSearch.continuous = false;
-  //     vSearch.interimresults = false;
-  //     vSearch.lang = "en-US";
-  //     vSearch.start();
-  //     vSearch.onresult = function (e: any) {
-  //       this.voiceHandler = e.results[0][0].transcript;
-  //       // console.log(this.voiceHandler);
-  //       vSearch.stop();
-        
-  //     };
-  //     vSearch.onerror = function (e: any) {
-  //       console.log(e);
-  //       vSearch.stop();
-  //     };
-  //   } else {
-  //     console.log(this.state.get(configKey, undefined as any));
-  //   }
-  //   console.log(this.voiceHandler)
-  // }
+  textToSpeech(user:string, text:string){
+    var finalMessage = user + " said " + text;
+    var converter = new SpeechSynthesisUtterance();
+    converter.text = finalMessage;
+    speechSynthesis.speak(converter);
+  }
 
   
 
