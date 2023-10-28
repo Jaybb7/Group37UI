@@ -19,8 +19,8 @@ const routes: Routes = [
   {path:'',component:HomeComponent},
   {path:'dashboard/matrimonial',component: MatrimonialComponent},
   {path:'dashboard/job-search',component: JobDashboardComponent},
-  {path:'avatar',component: AvatarGenerationServiceComponent}
-
+  {path:'avatar',component: AvatarGenerationServiceComponent},
+  {path:'document',component:DocumentGenerator}
 
   
 ];
