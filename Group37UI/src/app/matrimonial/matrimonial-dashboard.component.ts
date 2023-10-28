@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import axios from 'axios';
+import { DUMMY_IMAGE } from 'src/environment';
 
 @Component({
   selector: 'app-matrimonial',
@@ -24,7 +25,13 @@ export class MatrimonialComponent implements OnInit {
         this.matrimonialProfile = response.data;
       })
       .catch((error) => {
-        console.error('Error fetching matrimonial profile:', error);
+        //dummy data
+        this.matrimonialProfile = 
+        {age : 25, 
+          name : 'John Doe', 
+          bio : 'This is a sample bio', 
+          profileImageUrl : DUMMY_IMAGE,
+          friends : ['Friend 1', 'Friend 2'],  }
       });
   }
 

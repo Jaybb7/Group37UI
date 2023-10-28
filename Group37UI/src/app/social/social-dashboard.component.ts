@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import axios from 'axios';
 import { SocialDataService } from './social-data.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { DUMMY_IMAGE } from 'src/environment';
 @Component({
   selector: 'app-social-dashboard',
   templateUrl: './social-dashboard.component.html',
@@ -42,7 +43,7 @@ export class SocialDashboardComponent implements OnInit {
         this.userProfile = {
           userName: 'John Doe',
           bio: 'Hello, I am John!',
-          profileImageUrl: 'dummy-profile-image-url',
+          profileImageUrl: DUMMY_IMAGE,
         };
       });
 
