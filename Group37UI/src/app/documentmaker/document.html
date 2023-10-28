@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angular Component</title>
+    <link rel="stylesheet" href="./document.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>Select an Option</h2>
+    
+    <div class="button-group">
+        <button (click)="sendInformationToBackend('Option1')">Option 1</button>
+        <button (click)="sendInformationToBackend('Option2')">Option 2</button>
+        <button (click)="sendInformationToBackend('Option3')">Option 3</button>
+    </div>
+
+    <div *ngIf="result">
+        <h3>Result:</h3>
+        <p>{{ result }}</p>
+    </div>
+</div>
+
+</body>
+</html>

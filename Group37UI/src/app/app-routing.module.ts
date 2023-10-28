@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { JobDashboardComponent } from './job/job.component';
 import { AvatarGenerationServiceComponent } from './avatar/avatar-creation.component';
 
+import { DocumentGenerator } from './documentmaker/document.component';
 const routes: Routes = [
   
   { path: 'dashboard/social', component: SocialDashboardComponent },
@@ -19,6 +20,7 @@ const routes: Routes = [
   {path:'dashboard/matrimonial',component: MatrimonialComponent},
   {path:'dashboard/job-search',component: JobDashboardComponent},
   {path:'avatar',component: AvatarGenerationServiceComponent}
+
 
   
 ];

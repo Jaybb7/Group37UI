@@ -4,15 +4,18 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, width=device-width" />
 
-
-    <link rel="stylesheet" href="./profile.css" />
+    
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;1,400&display=swap"
+    />
   </head>
   <body>
     <div class="profile-page">
-    
+      
       <div class="column-2">
         <div class="matches-explore">
-          <div class="business-matches"  >
+          <div class="business-matches">
             <div class="business-matches-child"></div>	
             <div class="business">BUSINESS</div>
             <div class="recent-match">Recent Match</div>
@@ -226,9 +229,6 @@
             <div class="explore1">EXPLORE</div>
           </div>
         </div>
-      </div>
-      <div class="scrollbar-1">
-        <div class="scrollbar"></div>
       </div>
       <div class="column-1">
         <div class="profile-chats-jobs">
@@ -463,14 +463,7 @@
   <input type="file" (change)="uploadStatusPhoto($event)">
 </div>
 
-<!-- Display user profile data -->
-<div>
-  <h3>User Profile</h3>
-  <p>Name: {{userProfileData.fullName}}</p>
-  <p>Age: {{userProfileData.age}}</p>
-  <p>Occupation: {{userProfileData.occupation}}</p>
-  <!-- You can continue to display more userProfileData properties as needed -->
-</div>
+
 <!-- Section to upload image for avatar generation -->
 <div>
   <h3>Upload Image for Avatar Generation</h3>
