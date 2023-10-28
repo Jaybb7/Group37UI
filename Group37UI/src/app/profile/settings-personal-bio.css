@@ -1,0 +1,458 @@
+.personal-info-background {
+  position: relative;
+  border-radius: var(--br-3xs);
+  background-color: var(--color-white);
+  width: 1375px;
+  height: 1835px;
+  z-index: 0;
+}
+.button-bio {
+  position: absolute;
+  top: 69px;
+  left: 0;
+  border-radius: var(--br-xl);
+  background-color: var(--color-whitesmoke-200);
+  width: 1209px;
+  height: 281px;
+  overflow: hidden;
+}
+.bio,
+.bio1 {
+  position: absolute;
+  top: 0;
+  left: 575px;
+}
+.bio {
+  margin: 0 !important;
+  top: 1452px;
+  left: 83px;
+  width: 1209px;
+  height: 350px;
+  z-index: 1;
+}
+.button-emailinput-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-3xs);
+  background-color: var(--color-whitesmoke-200);
+  width: 914px;
+  height: 40px;
+}
+.button-emailinput,
+.button-numberinput {
+  position: absolute;
+  top: 338px;
+  left: 128px;
+  width: 914px;
+  height: 40px;
+}
+.button-numberinput {
+  top: 272px;
+}
+.button-ageinput-child,
+.button-locationinput,
+.button-occupationinput {
+  position: absolute;
+  top: 206px;
+  left: 128px;
+  width: 914px;
+  height: 40px;
+}
+.button-ageinput-child,
+.button-occupationinput {
+  top: 140px;
+}
+.button-ageinput-child {
+  top: 0;
+  left: 0;
+  border-radius: var(--br-3xs);
+  background-color: var(--color-whitesmoke-200);
+  width: 102px;
+}
+.button-ageinput,
+.button-fullnameinput-child {
+  position: absolute;
+  top: 74px;
+  left: 940px;
+  width: 102px;
+  height: 40px;
+}
+.button-fullnameinput-child {
+  top: 0;
+  left: 0;
+  border-radius: var(--br-3xs);
+  background-color: var(--color-whitesmoke-200);
+  width: 752px;
+}
+.button-fullnameinput {
+  position: absolute;
+  top: 74px;
+  left: 128px;
+  width: 752px;
+  height: 40px;
+}
+.email,
+.icon-email {
+  position: absolute;
+  top: 348px;
+  left: 50px;
+}
+.icon-email {
+  left: 4px;
+  width: 25px;
+  height: 19px;
+  overflow: hidden;
+}
+.number {
+  position: absolute;
+  top: 280px;
+  left: 41px;
+}
+.icon-phonenumber {
+  position: absolute;
+  top: 278px;
+  left: 8px;
+  width: 17px;
+  height: 28px;
+  overflow: hidden;
+}
+.icon-location,
+.location9 {
+  position: absolute;
+  top: 214px;
+  left: 35px;
+}
+.icon-location {
+  left: 7px;
+  width: 18px;
+  height: 24px;
+}
+.age,
+.full-name,
+.occupation19 {
+  position: absolute;
+  top: 148px;
+  left: 0;
+}
+.age,
+.full-name {
+  top: 82px;
+  left: 891px;
+}
+.full-name {
+  left: 14px;
+}
+.personal-details1 {
+  position: absolute;
+  top: 0;
+  left: 433px;
+  font-size: var(--font-size-21xl);
+  color: var(--color-darkgray);
+}
+.note-the-following {
+  position: absolute;
+  top: -6px;
+  left: 117px;
+  font-size: 15px;
+  display: inline-block;
+  width: 262px;
+}
+.personal-details {
+  position: absolute;
+  margin: 0 !important;
+  top: 1060px;
+  left: 103px;
+  width: 1042px;
+  height: 378px;
+  z-index: 2;
+  font-size: var(--font-size-xl);
+  color: var(--color-black);
+}
+.button-backgroundpic1 {
+  position: absolute;
+  top: 82px;
+  left: 0;
+  border-radius: var(--br-3xs);
+  background-color: var(--color-gainsboro);
+  width: 1209px;
+  height: 398px;
+  overflow: hidden;
+}
+.background-picture2 {
+  position: absolute;
+  top: 0;
+  left: 420px;
+}
+.background-picture1 {
+  position: absolute;
+  margin: 0 !important;
+  top: 534px;
+  left: 83px;
+  width: 1209px;
+  height: 480px;
+  z-index: 3;
+}
+.button-profilepic-icon1 {
+  position: relative;
+  border-radius: 175px;
+  width: 350px;
+  height: 350px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.button-profilepic1 {
+  position: absolute;
+  top: 67px;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.profile-picture1 {
+  position: absolute;
+  top: 0;
+  left: 43px;
+}
+.personal-info-line,
+.profile-picture {
+  position: absolute;
+  margin: 0 !important;
+  top: 99px;
+  left: 513px;
+  width: 350px;
+  height: 417px;
+  z-index: 4;
+}
+.personal-info-line {
+  top: 89.5px;
+  left: 39.5px;
+  border-top: 1px solid var(--color-black);
+  box-sizing: border-box;
+  width: 1296px;
+  height: 1px;
+  z-index: 5;
+}
+.personal-information {
+  position: absolute;
+  margin: 0 !important;
+  top: 20px;
+  left: 376px;
+  font-size: var(--font-size-31xl);
+  z-index: 6;
+}
+.personal-information-content {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  border-radius: var(--br-3xs);
+  background-color: var(--color-white);
+  box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-21xl) 0;
+  gap: 10px;
+}
+.personal-info-column {
+  position: absolute;
+  top: 110px;
+  left: 495px;
+  width: 1395px;
+  height: 970px;
+  overflow-y: auto;
+  font-size: var(--font-size-21xl);
+}
+.back10,
+.not-selected {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color-white);
+  width: 425px;
+  height: 920px;
+}
+.not-selected {
+  height: 77px;
+}
+.button-privacy,
+.privacy {
+  position: absolute;
+  top: 21px;
+  left: 161px;
+}
+.button-privacy {
+  top: 261px;
+  left: 0;
+  width: 425px;
+  height: 77px;
+  overflow: hidden;
+}
+.personalisation {
+  position: absolute;
+  top: 21px;
+  left: 105px;
+}
+.button-personalisation,
+.selected {
+  position: absolute;
+  left: 0;
+  width: 425px;
+  height: 77px;
+}
+.button-personalisation {
+  top: 184px;
+  overflow: hidden;
+}
+.selected {
+  top: 0;
+  background-color: #f4f4f4;
+}
+.personal-information1 {
+  position: absolute;
+  top: 21px;
+  left: 66px;
+}
+.button-personalinformation {
+  position: absolute;
+  top: 107px;
+  left: 0;
+  width: 425px;
+  height: 77px;
+  overflow: hidden;
+}
+.settings-column-child {
+  position: absolute;
+  top: 89.5px;
+  left: 39.5px;
+  background-color: var(--color-gainsboro);
+  border-top: 1px solid var(--color-black);
+  box-sizing: border-box;
+  width: 346px;
+  height: 1px;
+}
+.settings {
+  position: absolute;
+  top: 0;
+  left: 47px;
+}
+.settings-column,
+.settings-text {
+  position: absolute;
+  left: 40px;
+  overflow: hidden;
+}
+.settings-text {
+  top: 20px;
+  width: 345px;
+  height: 65px;
+  font-size: var(--font-size-31xl);
+}
+.settings-column {
+  top: 120px;
+  border-radius: var(--br-3xs);
+  background-color: var(--color-white);
+  box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.25);
+  width: 425px;
+  height: 920px;
+}
+.top-bar-child6 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color-whitesmoke-100);
+  width: 1920px;
+  height: 80px;
+}
+.aimate3 {
+  position: absolute;
+  top: 16px;
+  left: 30px;
+  font-size: var(--font-size-21xl);
+}
+.search-child1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color-lavender);
+  width: 528px;
+  height: 49px;
+}
+.search-icon3 {
+  position: absolute;
+  height: 71.43%;
+  width: 6.63%;
+  top: 14.29%;
+  right: 89.96%;
+  bottom: 14.29%;
+  left: 3.41%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.search-for-connections3 {
+  position: absolute;
+  top: 7px;
+  left: 76px;
+  display: inline-block;
+  width: 657px;
+}
+.search3 {
+  position: absolute;
+  top: 15px;
+  left: 1362px;
+  border-radius: var(--br-3xs);
+  width: 528px;
+  height: 49px;
+  overflow: hidden;
+  color: var(--color-lightsteelblue-300);
+}
+.top-bar-child7 {
+  position: absolute;
+  top: 14.5px;
+  left: 1331.5px;
+  background-color: var(--color-gainsboro);
+  border-right: 1px solid var(--color-silver);
+  box-sizing: border-box;
+  width: 1px;
+  height: 51px;
+}
+.home-dashboard3 {
+  position: absolute;
+  top: 21px;
+  left: 1033px;
+  color: var(--color-darkgray);
+}
+.top-bar-child8 {
+  position: absolute;
+  top: 14.5px;
+  left: 1002.5px;
+  background-color: var(--color-gainsboro);
+  border-right: 1px solid var(--color-silver);
+  box-sizing: border-box;
+  width: 1px;
+  height: 51px;
+}
+.top-bar3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  width: 1920px;
+  height: 80px;
+  overflow: hidden;
+  color: var(--color-black);
+}
+.settings-personalbio {
+  position: relative;
+  background-color: var(--color-white);
+  width: 100%;
+  height: 1080px;
+  text-align: left;
+  font-size: var(--font-size-11xl);
+  color: var(--color-darkgray);
+  font-family: var(--font-inter);
+}

@@ -1,0 +1,381 @@
+.all-chats-child {
+  top: 90px;
+  left: 517.5px;
+  border-top: 1px solid var(--color-darkgray);
+  box-sizing: border-box;
+  width: 489px;
+  height: 1px;
+}
+.all-chats-child,
+.back1,
+.chats2 {
+  position: absolute;
+}
+.chats2 {
+  top: 20px;
+  left: 627px;
+  font-size: var(--font-size-31xl);
+  color: var(--color-darkgray);
+}
+.back1 {
+  top: 0;
+  left: 0;
+  background-color: var(--color-lightsteelblue-300);
+  width: 1209px;
+  height: 186px;
+}
+.icon-person6 {
+  position: relative;
+  width: 94.9px;
+  height: 94.9px;
+}
+.profile-pic8 {
+  position: absolute;
+  top: 4px;
+  left: 15px;
+  border-radius: var(--br-71xl);
+  background-color: var(--color-darkgray);
+  border: 6px solid var(--color-white);
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-23xl);
+}
+.occupation10 {
+  position: absolute;
+  top: 32px;
+  left: 422px;
+  color: var(--color-gainsboro);
+}
+.name-age9 {
+  position: absolute;
+  top: 22px;
+  left: 230px;
+  font-size: var(--font-size-11xl);
+}
+.rectangle-div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-3xs);
+  background-color: var(--color-lightsteelblue-200);
+  width: 939px;
+  height: 45px;
+}
+.recent-message-eg3,
+.recent-message3 {
+  position: absolute;
+  top: 11px;
+  left: 20px;
+}
+.recent-message3 {
+  top: 93px;
+  left: 230px;
+  width: 939px;
+  height: 45px;
+  overflow: hidden;
+}
+.business2 {
+  position: absolute;
+  top: 10px;
+  left: 1100px;
+  color: var(--color-lightsteelblue-200);
+}
+.button-recentbusiness1,
+.button-recentbusiness2,
+.button-recentbusiness3 {
+  position: absolute;
+  top: 519px;
+  left: 90px;
+  border-radius: var(--br-3xs);
+  width: 1209px;
+  height: 186px;
+  overflow: hidden;
+}
+.button-recentbusiness2,
+.button-recentbusiness3 {
+  top: 313px;
+}
+.button-recentbusiness3 {
+  top: 107px;
+}
+.icon-chevron-right {
+  position: absolute;
+  height: 58.82%;
+  width: 10.51%;
+  top: 20.59%;
+  right: 0;
+  bottom: 20.59%;
+  left: 89.49%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.business6 {
+  position: relative;
+}
+.business5 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-3xs);
+  background-color: var(--color-lightsteelblue-300);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-3xs);
+}
+.button-allbusinesschats {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 255.9px;
+  height: 68px;
+  font-size: var(--font-size-21xl);
+  color: var(--color-lightsteelblue-100);
+}
+.business-chats {
+  position: absolute;
+  top: 146px;
+  left: 68px;
+  border-radius: var(--br-3xs);
+  background-color: var(--color-whitesmoke-300);
+  width: 1319px;
+  height: 725px;
+}
+.back4,
+.recent-message-child3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color-steelblue-100);
+  width: 1209px;
+  height: 186px;
+}
+.recent-message-child3 {
+  border-radius: var(--br-3xs);
+  background-color: var(--color-lightskyblue-200);
+  width: 939px;
+  height: 45px;
+}
+.dating2,
+.occupation13 {
+  position: absolute;
+  top: 10px;
+  left: 1125px;
+  color: var(--color-lightskyblue-200);
+}
+.occupation13 {
+  top: 29px;
+  left: 422px;
+  color: var(--color-gainsboro);
+}
+.name-age12 {
+  position: absolute;
+  top: 19px;
+  left: 230px;
+  font-size: var(--font-size-11xl);
+}
+.dating5 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-3xs);
+  background-color: #659bc3;
+  width: 217px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-3xs);
+  box-sizing: border-box;
+}
+.button-alldatingchats {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 255.9px;
+  height: 68px;
+  font-size: var(--font-size-21xl);
+  color: var(--color-lightskyblue-200);
+}
+.dating-chats {
+  position: absolute;
+  top: 936px;
+  left: 68px;
+  border-radius: var(--br-3xs);
+  background-color: var(--color-whitesmoke-300);
+  width: 1319px;
+  height: 725px;
+}
+.back7,
+.recent-message-child6 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color-mediumturquoise);
+  width: 1209px;
+  height: 186px;
+}
+.recent-message-child6 {
+  border-radius: var(--br-3xs);
+  background-color: var(--color-paleturquoise-100);
+  width: 939px;
+  height: 45px;
+}
+.social2 {
+  position: absolute;
+  top: 10px;
+  left: 1126px;
+  color: var(--color-paleturquoise-100);
+}
+.social4 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-3xs);
+  background-color: var(--color-mediumturquoise);
+  width: 217px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-3xs);
+  box-sizing: border-box;
+}
+.button-allsocialchats {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 255.9px;
+  height: 68px;
+  font-size: var(--font-size-21xl);
+  color: #b1f0f4;
+}
+.all-chats,
+.social-chats {
+  position: absolute;
+  top: 1726px;
+  left: 68px;
+  border-radius: var(--br-3xs);
+  background-color: var(--color-whitesmoke-300);
+  width: 1319px;
+  height: 725px;
+}
+.all-chats {
+  top: 10px;
+  left: 10px;
+  background-color: var(--color-white);
+  box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.25);
+  width: 1524px;
+  height: 2487px;
+  overflow: hidden;
+}
+.all-chats-column {
+  position: absolute;
+  top: 110px;
+  left: 188px;
+  width: 1544px;
+  height: 970px;
+  overflow-y: auto;
+}
+.top-bar-child1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color-whitesmoke-100);
+  width: 1920px;
+  height: 80px;
+}
+.aimate1 {
+  position: absolute;
+  top: 16px;
+  left: 30px;
+  font-size: var(--font-size-21xl);
+}
+.search-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color-lavender);
+  width: 528px;
+  height: 49px;
+}
+.search-icon1 {
+  position: absolute;
+  height: 71.43%;
+  width: 6.63%;
+  top: 14.29%;
+  right: 89.96%;
+  bottom: 14.29%;
+  left: 3.41%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.search-for-connections1 {
+  position: absolute;
+  top: 7px;
+  left: 76px;
+  display: inline-block;
+  width: 657px;
+}
+.search1 {
+  position: absolute;
+  top: 15px;
+  left: 1362px;
+  border-radius: var(--br-3xs);
+  width: 528px;
+  height: 49px;
+  overflow: hidden;
+  color: var(--color-lightsteelblue-300);
+}
+.line-div {
+  position: absolute;
+  top: 14.5px;
+  left: 1331.5px;
+  background-color: var(--color-gainsboro);
+  border-right: 1px solid var(--color-silver);
+  box-sizing: border-box;
+  width: 1px;
+  height: 51px;
+}
+.home-dashboard1 {
+  position: absolute;
+  top: 21px;
+  left: 1033px;
+  color: var(--color-darkgray);
+}
+.top-bar-child2 {
+  position: absolute;
+  top: 14.5px;
+  left: 1002.5px;
+  background-color: var(--color-gainsboro);
+  border-right: 1px solid var(--color-silver);
+  box-sizing: border-box;
+  width: 1px;
+  height: 51px;
+}
+.top-bar1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  width: 1920px;
+  height: 80px;
+  overflow: hidden;
+  font-size: var(--font-size-11xl);
+}
+.chat-feed-expanded {
+  position: relative;
+  background-color: var(--color-white);
+  width: 100%;
+  height: 1080px;
+  text-align: left;
+  font-size: var(--font-size-xl);
+  color: var(--color-black);
+  font-family: var(--font-inter);
+}

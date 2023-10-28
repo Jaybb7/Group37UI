@@ -25,10 +25,12 @@ export class AuthService {
           oAuthService.initLoginFlow();
           oAuthService.loadUserProfile().then((userProfile)=>{
             this.userInfo = userProfile as User;
+            localStorage.setItem("USERNAME",this.userInfo.info.name);
           })
         }else{
           oAuthService.loadUserProfile().then((userProfile)=>{
             this.userInfo = userProfile as User;
+            localStorage.setItem("USERNAME",this.userInfo.info.name);
           })
         }
       })

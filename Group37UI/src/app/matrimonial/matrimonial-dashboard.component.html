@@ -1,5 +1,67 @@
-<div class="container mt-5">
-    <h2>Matrimonial Dashboard</h2>
-    <!-- Add matrimonial dashboard content here -->
-  </div>
-  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrimonial Page</title>
+    <!-- Include your CSS and JavaScript dependencies here if needed -->
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <!-- Left Sidebar - Matrimonial Profiles -->
+            <div class="col-md-3">
+                <!-- Matrimonial Profile Info (you can fetch this dynamically from a service) -->
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <img [src]="matrimonialProfile.profileImageUrl" alt="Matrimonial Profile Image" class="img-fluid rounded-circle">
+                        <h5 class="card-title">{{ matrimonialProfile.userName }}</h5>
+                        <p class="card-text">{{ matrimonialProfile.age }} years old</p>
+                        <p class="card-text">{{ matrimonialProfile.location }}</p>
+                    </div>
+                </div>
+
+                <!-- Similar Profiles (you can fetch this dynamically from a service) -->
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Similar Profiles</h5>
+                        <ul class="list-group">
+                            <li class="list-group-item" *ngFor="let similarProfile of similarProfiles">{{ similarProfile.name }}</li>
+                            <!-- Add more similar profiles here -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content - Matrimonial Profiles -->
+            <div class="col-md-6">
+
+                <!-- Matrimonial Profile Details (you can fetch this dynamically from a service) -->
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Matrimonial Profile Details</h5>
+                        <p>{{ matrimonialProfile.description }}</p>
+                        <p>Looking for: {{ matrimonialProfile.lookingFor }}</p>
+                        <!-- Add more profile details as needed -->
+                    </div>
+                </div>
+
+                <!-- Send a Message to the Profile -->
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Send a Message</h5>
+                        <textarea class="form-control" rows="4" placeholder="Type your message"></textarea>
+                        <button class="btn btn-primary mt-2" (click)="sendMessage()">Send</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Sidebar - Ads or Suggestions -->
+            <div class="col-md-3">
+                <!-- Advertisement or Suggestions here -->
+            </div>
+        </div>
+    </div>
+    <!-- Include your JavaScript or Angular scripts here if needed -->
+</body>
+</html>

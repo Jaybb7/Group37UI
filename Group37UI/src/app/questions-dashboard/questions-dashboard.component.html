@@ -4,6 +4,19 @@
     <li *ngFor="let question of questions" class="list-group-item">{{ question }}</li>
   </ul>
 </div>
-<button (click)="fetchQuestionsAndCalculateScore()" class="btn btn-primary">Get Questions</button>
-<p *ngIf="profileScore !== null" class="mt-3">Your Profile Score: {{ profileScore }}</p>
+<button (click)="fetchQuestions()" class="btn btn-primary">Get Questions</button>
 
+<!-- Add a form for user answers -->
+<form (submit)="getProfileScore()" class="mt-3">
+  <div *ngFor="let question of questions; let i = index">
+    <label>{{ question }}</label>
+    <input type="text" 
+           [(ngModel)]="i === 0 ? testAnswer1 : i === 1 ? testAnswer2 : i === 2 ? testAnswer3 : userAnswers[question]" 
+           name="{{ question }}" 
+           class="form-control" 
+           required>
+  </div>
+  <button type="submit" class="btn btn-primary">Calculate Profile Score</button>
+</form>
+
+<p *ngIf="profileScore !== null" class="mt-3">Your Profile Score: {{ profileScore }}</p>

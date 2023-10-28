@@ -1,0 +1,68 @@
+.card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: scale(0.90);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    background-color: lightgray;
+  }
+  
+  
+  
+  .card-title{
+    color: black;
+    text-align: center;
+    text-decoration: solid;
+    text-shadow: #ddd;
+  }
+  
+  .message {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .message p {
+    margin-right: 10px; 
+  }
+  
+  button {
+    margin-top: 10px;
+    display: inline-block;
+    width: 100%;
+    background-color: darkslategrey;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 10px;
+  }
+  
+  .image{
+    border-radius: 10%;
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+    margin: 10px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+  }
+  
+  button:hover {
+    background-color: lightslategray;
+    color: white;
+  }
+  
+  .card-header{
+    color: white;
+    font-weight: bold;
+    border-color: white;
+    border-radius: 10px;
+  }
+  

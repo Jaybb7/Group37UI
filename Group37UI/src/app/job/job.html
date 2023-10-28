@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Dashboard</title>
+    <!-- Include your CSS and JavaScript dependencies here if needed -->
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <!-- Left Sidebar - User Profile -->
+            <div class="col-md-3">
+                <!-- User Profile Info -->
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <img [src]="userProfile.profileImageUrl" alt="User Profile Image" class="img-fluid rounded-circle">
+                        <h5 class="card-title">{{ userProfile.userName }}</h5>
+                        <p class="card-text">{{ userProfile.jobTitle }}</p>
+                    </div>
+                </div>
+
+                <!-- Connections or Network (you can fetch this dynamically from a service) -->
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Connections</h5>
+                        <ul class="list-group">
+                            <li class="list-group-item" *ngFor="let connection of connections">{{ connection }}</li>
+                            <!-- Add more connections here -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content - Job Posts -->
+            <div class="col-md-6">
+
+                <!-- Create Job Post Section -->
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Create a Job Post</h5>
+
+                        <!-- Updated Form Fields to match backend structure -->
+                        <input type="text" class="form-control mb-2" placeholder="Post Title" formControlName="postTitle">
+                        <input type="text" class="form-control mb-2" placeholder="Post Benefits" formControlName="postBenefits">
+                        <input type="text" class="form-control mb-2" placeholder="Post Salary" formControlName="postSalary">
+                        <textarea class="form-control mb-2" rows="2" placeholder="Description" formControlName="desc"></textarea>
+                        <textarea class="form-control mb-2" rows="2" placeholder="Requirements" formControlName="requirements"></textarea>
+                        <input type="text" class="form-control mb-2" placeholder="Post Location" formControlName="postLocation">
+                        <input type="text" class="form-control mb-2" placeholder="Point of Contact" formControlName="postPointOfContact">
+                        <input type="text" class="form-control mb-2" placeholder="User ID" formControlName="userId">
+
+                        <button class="btn btn-primary mt-2" (click)="createJobPost()">Post</button>
+                    </div>
+                </div>
+
+                <!-- Display Job Posts -->
+                <div class="card mb-3" *ngFor="let jobPost of jobPosts">
+                    <div class="card-body">
+                        <!-- Sample Job Post -->
+                        <h5 class="mt-0">{{ jobPost.jobTitle }}</h5>
+                        <p>{{ jobPost.companyName }}</p>
+                        <p>{{ jobPost.jobDescription }}</p>
+                        <!-- Add more job posts here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Sidebar - Ads or Suggestions -->
+            <div class="col-md-3">
+                <!-- Advertisement or Suggestions here -->
+            </div>
+        </div>
+    </div>
+    <!-- Include your JavaScript or Angular scripts here if needed -->
+</body>
+
+</html>
