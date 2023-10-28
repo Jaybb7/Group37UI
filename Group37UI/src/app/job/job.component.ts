@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import axios from 'axios';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { DUMMY_IMAGE } from 'src/environment';
 
 @Component({
   selector: 'app-job-dashboard',
@@ -42,7 +43,7 @@ export class JobDashboardComponent implements OnInit {
         this.userProfile = {
           userName: 'John Doe',
           jobTitle: 'Software Engineer',
-          profileImageUrl: 'dummy-profile-image-url',
+          profileImageUrl: DUMMY_IMAGE,
         };
       });
   }

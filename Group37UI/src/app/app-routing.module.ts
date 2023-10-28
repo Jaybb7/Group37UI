@@ -8,6 +8,8 @@ import { QuestionsDashboardComponent } from './questions-dashboard/questions-das
 import { ProfilePageComponent } from './profile/profile.component';
 import { HomeComponent } from './home/home.component';
 import { JobDashboardComponent } from './job/job.component';
+import { AvatarGenerationServiceComponent } from './avatar/avatar-creation.component';
+
 import { DocumentGenerator } from './documentmaker/document.component';
 const routes: Routes = [
   
@@ -16,7 +18,8 @@ const routes: Routes = [
   {path:'profile',component:ProfilePageComponent },
   {path:'',component:HomeComponent},
   {path:'dashboard/matrimonial',component: MatrimonialComponent},
-  {path:'dashboard/job-search',component: JobDashboardComponent}
+  {path:'dashboard/job-search',component: JobDashboardComponent},
+  {path:'avatar',component: AvatarGenerationServiceComponent}
 
 
   
