@@ -7,6 +7,7 @@ import { TransferState, makeStateKey } from "@angular/platform-browser";
 const configKey = makeStateKey("CONFIG");
 import { isPlatformServer } from "@angular/common";
 import Swal from "sweetalert2";
+import { AIServiceService } from "../services/AI/aiservice.service";
 
 interface IWindow extends Window {
   webkitSpeechRecognition: any;
@@ -20,6 +21,7 @@ interface IWindow extends Window {
 export class HeaderComponent implements OnInit {
   isDropdownOpen = false;
   messageForm!: FormGroup;
+  aiForm!: FormGroup;
   voiceHandler: string = "HI";
 
   constructor(
@@ -27,6 +29,7 @@ export class HeaderComponent implements OnInit {
     public formBuilder: FormBuilder,
     public messagesService: MessagesService,
     private cdr: ChangeDetectorRef,
+    public aIServiceService:AIServiceService,
     private state: TransferState,
     @Inject(PLATFORM_ID) private platformid: Object
   ) {}
@@ -65,13 +68,19 @@ export class HeaderComponent implements OnInit {
     speechSynthesis.speak(converter);
   }
 
-  
+  askAI(){
+    // console.log(this.aiForm.get('question')?.value);
+    this.aIServiceService.askLLM(this.aiForm.get('question')?.value);
+  }
 
   ngOnInit(): void {
     this.messageForm = this.formBuilder.group({
       from: [localStorage.getItem("USERNAME")],
       to: ["", Validators.required],
       message: [""],
+    });
+    this.aiForm = this.formBuilder.group({
+      question : ["", Validators.required]
     });
   }
 

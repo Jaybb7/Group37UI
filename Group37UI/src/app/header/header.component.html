@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" routerLink="/">Purpose Page</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+    aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
@@ -19,7 +19,11 @@
         <a class="nav-link" routerLink="/profile">Profile</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" data-toggle="modal" data-target="#sendAMessagemodal" (click)="messagesService.getMessage()">Message</a>
+        <a class="nav-link" data-toggle="modal" data-target="#sendAMessagemodal"
+          (click)="messagesService.getMessage()">Message</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="modal" data-target="#askAI">AIChat</a>
       </li>
     </ul>
   </div>
@@ -45,10 +49,14 @@
               <div class="message">
                 <small>{{message.user}} : {{message.message}}</small>
                 <small>{{message.timeStamp}}</small>
-                <i type="button" class="btn btn-outline-secondary"  (click)="textToSpeech(message.user, message.message)">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-speaker" viewBox="0 0 16 16">
-                    <path d="M12 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h8zM4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H4z"/>
-                    <path d="M8 4.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5zM8 6a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 3a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm-3.5 1.5a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
+                <i type="button" class="btn btn-outline-secondary"
+                  (click)="textToSpeech(message.user, message.message)">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-speaker" viewBox="0 0 16 16">
+                    <path
+                      d="M12 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h8zM4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H4z" />
+                    <path
+                      d="M8 4.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5zM8 6a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 3a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm-3.5 1.5a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
                   </svg>
                 </i>
               </div>
@@ -63,28 +71,30 @@
           <form [formGroup]="messageForm">
             <div class="form-group flex-fill mb-0">
               <label class="form-label" for="to">Whom do you want to send a message ? </label>
-              <input type="text" id="to" class="form-control" formControlName="to" required
-                placeholder="Username" />
+              <input type="text" id="to" class="form-control" formControlName="to" required placeholder="Username" />
               <small id="to" class="form-text text-muted">Please Enter the Username.</small>
             </div>
             <!-- <div class="form-group flex-fill mb-0" *ngIf!="messageForm.get('to')!.invalid"> -->
-              <div class="form-group flex-fill mb-0" *ngIf="!messageForm.get('to')!.invalid">
+            <div class="form-group flex-fill mb-0" *ngIf="!messageForm.get('to')!.invalid">
               <label class="form-label" for="messageContent">Message</label>
               <div class="input-group">
-                <input type="text" id="message" class="form-control" formControlName="message"  
-                  placeholder="Message" [value]="voiceHandler"/>
+                <input type="text" id="message" class="form-control" formControlName="message" placeholder="Message"
+                  [value]="voiceHandler" />
                 <div class="input-group-append">
-                  <i type="button" class="btn btn-outline-secondary"  (click)="voiceSearch()">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-mic" viewBox="0 0 16 16">
-                      <path d="M3.5 6.5A.5.5 0 0 1 4 7v1a4 4 0 0 0 8 0V7a.5.5 0 0 1 1 0v1a5 5 0 0 1-4.5 4.975V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 .5-.5z"/>
-                      <path d="M10 8a2 2 0 1 1-4 0V3a2 2 0 1 1 4 0v5zM8 0a3 3 0 0 0-3 3v5a3 3 0 0 0 6 0V3a3 3 0 0 0-3-3z"/>
+                  <i type="button" class="btn btn-outline-secondary" (click)="voiceSearch()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-mic"
+                      viewBox="0 0 16 16">
+                      <path
+                        d="M3.5 6.5A.5.5 0 0 1 4 7v1a4 4 0 0 0 8 0V7a.5.5 0 0 1 1 0v1a5 5 0 0 1-4.5 4.975V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 .5-.5z" />
+                      <path
+                        d="M10 8a2 2 0 1 1-4 0V3a2 2 0 1 1 4 0v5zM8 0a3 3 0 0 0-3 3v5a3 3 0 0 0 6 0V3a3 3 0 0 0-3-3z" />
                     </svg>
                   </i>
                 </div>
               </div>
               <small id="message" class="form-text text-muted">Please be respectful.</small>
             </div>
-            
+
             <br>
             <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
               <button type="submit" class="button" style="width: 100%;" (click)="sendMessage()"
@@ -97,3 +107,38 @@
   </div>
 </div>
 
+
+
+<!-- AICHAT -->
+<!-- SEND MESSAGE MODAL -->
+<div class="modal fade" id="askAI" tabindex="-1" role="dialog" aria-labelledby="askAI" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="askAI">Ask AI</h5>
+        <a type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+            class="sr-only">Close</span></a>
+      </div>
+      <div class="modal-body" style="max-height: 600px; overflow-y: auto;">
+        <!-- <form [formGroup]="aiForm">
+          <div class="form-group flex-fill mb-0">
+            <label class="form-label" for="messageContent">Question?</label>
+            <input type="text" id="question" class="form-control" formControlName="question"
+              placeholder="What is your Question?" required/>
+            <small id="message" class="form-text text-muted">Please be respectful.</small><br>
+            <button type="button" class="button" style="width: 100%;" (click)="askAI()" [disabled]="aiForm.invalid">Ask
+              AI</button>
+          </div>
+        </form> -->
+        <form [formGroup]="aiForm">
+          <div class="form-group flex-fill mb-0">
+            <label class="form-label" for="question">Question?</label>
+            <input type="text" id="question" class="form-control" formControlName="question" placeholder="What is your Question?" required />
+            <small id="message" class="form-text text-muted">Please be respectful.</small><br>
+            <button type="button" class="button" style="width: 100%;" (click)="askAI()" *ngIf="aiForm.valid">Ask AI</button>
+          </div>
+        </form>        
+      </div>
+    </div>
+  </div>
+</div>
