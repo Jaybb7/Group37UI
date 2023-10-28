@@ -28,14 +28,14 @@ export class QuestionsDashboardComponent implements OnInit {
 
   fetchQuestions() {
     console.log(this.currentPurpose)
-    const openaiEndpoint = `http://localhost:8080/ai/generateQuestions?purpose=${this.currentPurpose}`;
+    const openaiEndpoint = `http://localhost:4200/ai/generateQuestions?purpose=${this.currentPurpose}`;
 
     axios.get(openaiEndpoint)
       .then((response) => {
         const data = response.data;
 
-        if (data.questions && data.questions.length > 0) {
-          this.questions = data.questions;
+        if (data && data.length > 0) {
+          this.questions = data;
         } else {
           this.provideDummyQuestions();
         }
@@ -61,7 +61,7 @@ export class QuestionsDashboardComponent implements OnInit {
 
   getProfileScore() {
     // Replace 'your_openai_api_endpoint' with the actual API endpoint for sending user answers
-    const openaiEndpoint = `http://localhost:8080/gcp/askGCP?purpose=${this.currentPurpose}&answer1=${this.testAnswer1}&answer2=${this.testAnswer2}&answer3=${this.testAnswer3}&userId=${this.userId}`;
+    const openaiEndpoint = `http://localhost:4200/gcp/askGCP?purpose=${this.currentPurpose}&answer1=${this.testAnswer1}&answer2=${this.testAnswer2}&answer3=${this.testAnswer3}&userId=${this.userId}`;
 
     axios.post(openaiEndpoint)
       .then((response) => {
