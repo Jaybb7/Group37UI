@@ -8,7 +8,7 @@ import { QuestionsDashboardComponent } from './questions-dashboard/questions-das
 import { ProfilePageComponent } from './profile/profile.component';
 import { HomeComponent } from './home/home.component';
 import { JobDashboardComponent } from './job/job.component';
-
+import { DocumentGenerator } from './documentmaker/document.component';
 const routes: Routes = [
   
   { path: 'dashboard/social', component: SocialDashboardComponent },
@@ -17,6 +17,7 @@ const routes: Routes = [
   {path:'',component:HomeComponent},
   {path:'dashboard/matrimonial',component: MatrimonialComponent},
   {path:'dashboard/job-search',component: JobDashboardComponent}
+
 
   
 ];
