@@ -254,7 +254,7 @@ generateAvatar(event: any) {
   reader.onload = () => {
       const base64Image = reader.result?.toString().split(',')[1]; // This will give you the base64 part of the image
       if (base64Image) {
-          axios.post('http://localhost:4200/avatar/generate', { image: base64Image })
+          axios.post('http://localhost:8080/avatar/generate', { image: base64Image })
               .then(response => {
                   console.log('Avatar generated. Image URL:', response.data);
               })

@@ -14,7 +14,7 @@ export class DocumentGenerator {
 
   sendInformationToBackend(value: string) {
     console.log(value)
-    axios.get('http://localhost:4200/ai/generateDocument', {
+    axios.get('http://localhost:8080/ai/generateDocument', {
       params: {
         information: value
       }
