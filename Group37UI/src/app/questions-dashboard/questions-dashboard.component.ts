@@ -27,6 +27,7 @@ export class QuestionsDashboardComponent implements OnInit {
   }
 
   fetchQuestions() {
+    console.log(this.currentPurpose)
     const openaiEndpoint = `http://localhost:8080/ai/generateQuestions?purpose=${this.currentPurpose}`;
 
     axios.get(openaiEndpoint)

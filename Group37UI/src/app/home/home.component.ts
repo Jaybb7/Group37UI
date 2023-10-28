@@ -26,7 +26,7 @@ export class HomeComponent implements OnInit{
 
   onSubmit(){
     const selectedPurpose=this.userService.checkUserPurposeOfVisit(this.purposeForm.get('purpose')!.value);
-    
+    console.log(selectedPurpose)
     this.router.navigate(['/questions'], { queryParams: { purpose: selectedPurpose } });
   }
 

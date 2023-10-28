@@ -464,5 +464,31 @@
         <div class="top-bar-inner"></div>
       </div>
     </div>
+    <!-- Section to upload profile photo -->
+<div>
+  <h3>Upload Profile Photo</h3>
+  <input type="file" (change)="uploadProfilePhoto($event)">
+</div>
+
+<!-- Section to upload status photo -->
+<div>
+  <h3>Upload Status Photo</h3>
+  <input type="file" (change)="uploadStatusPhoto($event)">
+</div>
+
+<!-- Display user profile data -->
+<div>
+  <h3>User Profile</h3>
+  <p>Name: {{userProfileData.fullName}}</p>
+  <p>Age: {{userProfileData.age}}</p>
+  <p>Occupation: {{userProfileData.occupation}}</p>
+  <!-- You can continue to display more userProfileData properties as needed -->
+</div>
+<!-- Section to upload image for avatar generation -->
+<div>
+  <h3>Upload Image for Avatar Generation</h3>
+  <input type="file" (change)="generateAvatar($event)">
+</div>
+
   </body>
 </html>

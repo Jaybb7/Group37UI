@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Job Dashboard</title>
     <!-- Include your CSS and JavaScript dependencies here if needed -->
 </head>
+
 <body>
-    <div class="container mt-5" >
+    <div class="container mt-5">
         <div class="row">
             <!-- Left Sidebar - User Profile -->
             <div class="col-md-3">
@@ -39,13 +41,22 @@
                 <div class="card mb-3">
                     <div class="card-body">
                         <h5 class="card-title">Create a Job Post</h5>
-                        <textarea class="form-control" rows="4" placeholder="Job details and requirements" formControlName="newJobPostContent">
-                        </textarea>
+
+                        <!-- Updated Form Fields to match backend structure -->
+                        <input type="text" class="form-control mb-2" placeholder="Post Title" formControlName="postTitle">
+                        <input type="text" class="form-control mb-2" placeholder="Post Benefits" formControlName="postBenefits">
+                        <input type="text" class="form-control mb-2" placeholder="Post Salary" formControlName="postSalary">
+                        <textarea class="form-control mb-2" rows="2" placeholder="Description" formControlName="desc"></textarea>
+                        <textarea class="form-control mb-2" rows="2" placeholder="Requirements" formControlName="requirements"></textarea>
+                        <input type="text" class="form-control mb-2" placeholder="Post Location" formControlName="postLocation">
+                        <input type="text" class="form-control mb-2" placeholder="Point of Contact" formControlName="postPointOfContact">
+                        <input type="text" class="form-control mb-2" placeholder="User ID" formControlName="userId">
+
                         <button class="btn btn-primary mt-2" (click)="createJobPost()">Post</button>
                     </div>
                 </div>
 
-                <!-- Display Job Posts (you can fetch these dynamically from a service) -->
+                <!-- Display Job Posts -->
                 <div class="card mb-3" *ngFor="let jobPost of jobPosts">
                     <div class="card-body">
                         <!-- Sample Job Post -->
@@ -65,4 +76,5 @@
     </div>
     <!-- Include your JavaScript or Angular scripts here if needed -->
 </body>
+
 </html>
