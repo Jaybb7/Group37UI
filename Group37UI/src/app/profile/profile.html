@@ -477,6 +477,11 @@
   <h3>Upload Image for Avatar Generation</h3>
   <input type="file" (change)="generateAvatar($event)">
 </div>
-
+<!-- User Profile Info -->
+            <div class="card mb-3">
+              <div class="card-body">
+              <img src={{apiResponse}} alt="User Profile Image" class="img-fluid rounded-circle" width="250px" >
+            </div>
+            </div>
   </body>
 </html>

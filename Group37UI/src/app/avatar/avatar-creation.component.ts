@@ -10,7 +10,7 @@ import axios from 'axios';
 })
 export class AvatarGenerationServiceComponent implements OnInit {
   userProfile: any;
-
+  userId!: number;
   apiResponse: any;
 
   constructor(private avatarService: AvatarGenerationService ) { }
@@ -22,7 +22,27 @@ export class AvatarGenerationServiceComponent implements OnInit {
     });
     this.apiResponse = '';
   }
+  uploadProfilePhoto(event: any) {
+      this.uploadPhoto(event, `/userprofile/uploadProfilePhoto/${this.userId}`);
+  }
 
+  uploadStatusPhoto(event: any) {
+      this.uploadPhoto(event, `/userprofile/uploadStatusPhoto/${this.userId}`);
+  }
+
+  private uploadPhoto(event: any, url: string) {
+    const file = event.target.files[0];
+    const formData = new FormData();
+    formData.append('file', file);
+
+    axios.post(url, formData)
+      .then(response => {
+        console.log('Photo uploaded successfully');
+      })
+      .catch(error => {
+        console.error('Failed to upload photo:', error);
+      });
+  }
   onUploadButtonClick() {
     const fileInput = document.getElementById('profile-picture-upload') as HTMLInputElement;
 
