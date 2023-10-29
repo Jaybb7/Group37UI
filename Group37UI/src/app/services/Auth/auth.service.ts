@@ -1,12 +1,12 @@
 import { Injectable } from "@angular/core";
 import { AuthConfig, OAuthService } from "angular-oauth2-oidc";
 
-const oAuthConfig:AuthConfig={
-  issuer:'https://accounts.google.com',
-  strictDiscoveryDocumentValidation:false,
+const oAuthConfig: AuthConfig = {
+  issuer: 'https://accounts.google.com',
+  strictDiscoveryDocumentValidation: false,
   redirectUri: window.location.origin,
-  clientId:'664760953066-u4vee7n6kt6ieqrhdegq8tqb3ur96n2j.apps.googleusercontent.com',
-  scope:'openid profile email'
+  clientId: '664760953066-u4vee7n6kt6ieqrhdegq8tqb3ur96n2j.apps.googleusercontent.com',
+  scope: 'openid profile email'
 }
 
 @Injectable({
@@ -15,34 +15,42 @@ const oAuthConfig:AuthConfig={
 export class AuthService {
 
   userInfo!: User;
+  userEmail: string | null = null; 
 
-  constructor(public readonly oAuthService:OAuthService) {
+  constructor(public readonly oAuthService: OAuthService) {
     oAuthService.configure(oAuthConfig);
     oAuthService.logoutUrl = 'https://www.google.com/accounts/Logout';
-    oAuthService.loadDiscoveryDocument().then(()=>{
-      oAuthService.tryLoginImplicitFlow().then(()=>{
-        if(!oAuthService.hasValidAccessToken()){
+    oAuthService.loadDiscoveryDocument().then(() => {
+      oAuthService.tryLoginImplicitFlow().then(() => {
+        if (!oAuthService.hasValidAccessToken()) {
           oAuthService.initLoginFlow();
-          oAuthService.loadUserProfile().then((userProfile)=>{
+          oAuthService.loadUserProfile().then((userProfile) => {
             this.userInfo = userProfile as User;
-            localStorage.setItem("USERNAME",this.userInfo.info.name);
+            this.userEmail = this.userInfo.info.email; 
+            localStorage.setItem("USERNAME", this.userInfo.info.name);
           })
-        }else{
-          oAuthService.loadUserProfile().then((userProfile)=>{
+        } else {
+          oAuthService.loadUserProfile().then((userProfile) => {
             this.userInfo = userProfile as User;
-            localStorage.setItem("USERNAME",this.userInfo.info.name);
+            this.userEmail = this.userInfo.info.email; 
+            localStorage.setItem("USERNAME", this.userInfo.info.name);
           })
         }
       })
     })
   }
 
-  isLoggedIn():boolean{
+  isLoggedIn(): boolean {
     return this.oAuthService.hasValidAccessToken();
   }
 
-  signOut(){
+  signOut() {
     this.oAuthService.logOut();
+  }
+
+  // Method to get the user's email as userId
+  getUserId(): string | null {
+    return this.userEmail;
   }
 
 }
@@ -68,5 +76,3 @@ export interface User {
     sub: string;
   };
 }
-
-

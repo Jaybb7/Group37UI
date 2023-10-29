@@ -18,6 +18,10 @@ export class QuestionsDashboardComponent implements OnInit {
   testAnswer3: string | null = null;
   userId: string | null = null;
   rawApiResponse: any = null;
+
+  updateUserAnswer(question: string, answer: string) {
+    this.userAnswers[question] = answer;
+  }
   
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
@@ -62,17 +66,29 @@ export class QuestionsDashboardComponent implements OnInit {
   }
 
   getProfileScore() {
-   
-    const openaiEndpoint = `http://localhost:8080/gcp/askGCP?purpose=${this.currentPurpose}&answer1=${this.testAnswer1}&answer2=${this.testAnswer2}&answer3=${this.testAnswer3}&userId=${this.userId}`;
-
+ 
+    const answersArray = Object.keys(this.userAnswers).map((question) => {
+      return encodeURIComponent(this.userAnswers[question]);
+    });
+  
+ 
+    while (answersArray.length < 3) {
+      answersArray.push('');
+    }
+  
+    // Construct the URL with answers
+    const openaiEndpoint = `http://localhost:8080/gcp/askGCP?purpose=${this.currentPurpose}&answer1=${answersArray[0]}&answer2=${answersArray[1]}&answer3=${answersArray[2]}&userId=${this.userId}`;
+  
     axios.post(openaiEndpoint)
       .then((response) => {
         this.rawApiResponse = response.data;
-        //this.profileScore = response.data.score;
+        // this.profileScore = response.data.score;
       })
       .catch((error) => {
         console.error('Error fetching profile score:', error);
-        //this.calculateProfileScore();
+        // this.calculateProfileScore();
       });
   }
+  
+  
 }
