@@ -62,28 +62,17 @@ export class QuestionsDashboardComponent implements OnInit {
   }
 
   getProfileScore() {
-    if (this.currentPurpose && this.userId && this.testAnswer1 && this.testAnswer2 && this.testAnswer3) {
-      const openaiEndpoint = `http://localhost:8080/api/user-score/calculate-score`;
+   
+    const openaiEndpoint = `http://localhost:8080/gcp/askGCP?purpose=${this.currentPurpose}&answer1=${this.testAnswer1}&answer2=${this.testAnswer2}&answer3=${this.testAnswer3}&userId=${this.userId}`;
 
-      const requestData = {
-        userResponse: {
-          answer1: this.testAnswer1,
-          answer2: this.testAnswer2,
-          answer3: this.testAnswer3
-        }
-      };
-
-      axios.post(openaiEndpoint, requestData)
-        .then((response) => {
-          this.rawApiResponse = response.data;
-         
-          //  this.profileScore = response.data.score;
-        })
-        .catch((error) => {
-          console.error('Error fetching profile score:', error);
-          
-          //  this.calculateProfileScore();
-        });
-    }
+    axios.post(openaiEndpoint)
+      .then((response) => {
+        this.rawApiResponse = response.data;
+        //this.profileScore = response.data.score;
+      })
+      .catch((error) => {
+        console.error('Error fetching profile score:', error);
+        //this.calculateProfileScore();
+      });
   }
 }
