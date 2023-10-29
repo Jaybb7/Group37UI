@@ -8,7 +8,7 @@ import axios from 'axios';
 })
 export class DocumentGenerator {
 
-  result: any;
+  result: string="s";  // Changed type to string
 
   constructor() { }
 
@@ -19,7 +19,7 @@ export class DocumentGenerator {
         information: value
       }
     }).then(response => {
-      this.result = response.data.data;
+      this.result = JSON.stringify(response.data, null, 2);  // Beautify JSON
     }).catch(error => {
       console.error('Error occurred:', error);
     });

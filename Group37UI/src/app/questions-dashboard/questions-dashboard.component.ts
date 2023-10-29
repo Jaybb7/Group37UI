@@ -17,6 +17,7 @@ export class QuestionsDashboardComponent implements OnInit {
   testAnswer2: string ="null";
   testAnswer3: string ="null";
   userId: string = "null";
+  rawApiResponse: any = null;
   ngOnInit() {
    
     this.route.queryParams.subscribe(params => {
@@ -65,11 +66,12 @@ export class QuestionsDashboardComponent implements OnInit {
 
     axios.post(openaiEndpoint)
       .then((response) => {
-        this.profileScore = response.data.score;
+        this.rawApiResponse = response.data;
+        //this.profileScore = response.data.score;
       })
       .catch((error) => {
         console.error('Error fetching profile score:', error);
-        this.calculateProfileScore();
+        //this.calculateProfileScore();
       });
   }
 }
