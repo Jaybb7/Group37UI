@@ -11,15 +11,15 @@ export class QuestionsDashboardComponent implements OnInit {
   questions: string[] = [];
   profileScore: number | null = null;
   userAnswers: { [key: string]: string } = {};
-  currentPurpose: string = "null";
+  currentPurpose: string | null = null;
   constructor(private route: ActivatedRoute) { } 
-  testAnswer1: string ="null";
-  testAnswer2: string ="null";
-  testAnswer3: string ="null";
-  userId: string = "null";
+  testAnswer1: string | null = null;
+  testAnswer2: string | null = null;
+  testAnswer3: string | null = null;
+  userId: string | null = null;
   rawApiResponse: any = null;
+  
   ngOnInit() {
-   
     this.route.queryParams.subscribe(params => {
       this.currentPurpose = params['purpose'];
       this.userId = params['userId'];
@@ -28,23 +28,24 @@ export class QuestionsDashboardComponent implements OnInit {
   }
 
   fetchQuestions() {
-    console.log(this.currentPurpose)
-    const openaiEndpoint = `http://localhost:8080/ai/generateQuestions?purpose=${this.currentPurpose}`;
+    if (this.currentPurpose) {
+      const openaiEndpoint = `http://localhost:8080/api/user-score/generate-questions/${this.userId}`;
 
-    axios.get(openaiEndpoint)
-      .then((response) => {
-        const data = response.data;
+      axios.post(openaiEndpoint)
+        .then((response) => {
+          const data = response.data;
 
-        if (data && data.length > 0) {
-          this.questions = data;
-        } else {
+          if (data && data.length > 0) {
+            this.questions = data;
+          } else {
+            this.provideDummyQuestions();
+          }
+        })
+        .catch((error) => {
+          console.error('Error fetching questions:', error);
           this.provideDummyQuestions();
-        }
-      })
-      .catch((error) => {
-        console.error('Error fetching questions:', error);
-        this.provideDummyQuestions();
-      });
+        });
+    }
   }
 
   provideDummyQuestions() {
@@ -61,17 +62,28 @@ export class QuestionsDashboardComponent implements OnInit {
   }
 
   getProfileScore() {
-   
-    const openaiEndpoint = `http://localhost:8080/gcp/askGCP?purpose=${this.currentPurpose}&answer1=${this.testAnswer1}&answer2=${this.testAnswer2}&answer3=${this.testAnswer3}&userId=${this.userId}`;
+    if (this.currentPurpose && this.userId && this.testAnswer1 && this.testAnswer2 && this.testAnswer3) {
+      const openaiEndpoint = `http://localhost:8080/api/user-score/calculate-score`;
 
-    axios.post(openaiEndpoint)
-      .then((response) => {
-        this.rawApiResponse = response.data;
-        //this.profileScore = response.data.score;
-      })
-      .catch((error) => {
-        console.error('Error fetching profile score:', error);
-        //this.calculateProfileScore();
-      });
+      const requestData = {
+        userResponse: {
+          answer1: this.testAnswer1,
+          answer2: this.testAnswer2,
+          answer3: this.testAnswer3
+        }
+      };
+
+      axios.post(openaiEndpoint, requestData)
+        .then((response) => {
+          this.rawApiResponse = response.data;
+         
+          //  this.profileScore = response.data.score;
+        })
+        .catch((error) => {
+          console.error('Error fetching profile score:', error);
+          
+          //  this.calculateProfileScore();
+        });
+    }
   }
 }

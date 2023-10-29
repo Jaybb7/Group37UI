@@ -129,9 +129,7 @@ export class SocialDashboardComponent implements OnInit {
         console.log('Post created:', response.data);
         this.newPostForm.reset();
 
-        this.socialDataService.getPosts().subscribe((posts) => {
-          this.posts = posts;
-        });
+        
 
         this.showModal('Post created successfully.');
       })

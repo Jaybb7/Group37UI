@@ -105,7 +105,7 @@ export class JobDashboardComponent implements OnInit {
       .then((response) => {
         console.log('Job post created:', response.data);
         this.newJobPostForm.reset();
-        this.fetchJobPosts();
+        
         this.showModal('Post created successfully.');
       })
       .catch((error) => {
