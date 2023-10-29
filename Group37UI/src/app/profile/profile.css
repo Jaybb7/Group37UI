@@ -19,8 +19,8 @@
   top: 0;
   left: 0;
   border-radius: var(--br-3xs);
-  background-color: var(--color-lightsteelblue-300);
-  width: 591px;
+  background-color: var(--color-lightsteelblue-300) !important;
+  width: 491px;
   height: 533px;
 }
 .business,
@@ -467,7 +467,7 @@
 .button-settings {
   position: absolute;
   top: 418px;
-  left: 1149px;
+  left: 60%;
   overflow: hidden;
   display: flex;
   flex-direction: row;
@@ -475,7 +475,8 @@
   justify-content: flex-start;
 }
 .background-picture {
-  position: relative;
+  position:absolute;
+  left:0;
 }
 .button-backgroundpic {
   position: absolute;
