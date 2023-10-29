@@ -25,14 +25,30 @@
                 <!-- Profile Picture Upload -->
                 <div class="card mb-3">
                   <div class="card-body">
-                      <h5 class="card-title">Upload New Base Photo</h5>
+                      <h5 class="card-title">Upload New Prompt Photo</h5>
                       <input type="file" id="profile-picture-upload" accept="image/*">
-                      <button class="btn btn-primary mt-2" id="upload-button">Upload</button>
+                      <button class="btn btn-primary mt-2" id="upload-button" (click)="onUploadButtonClick()" >Upload</button>
                   </div>
               </div>
             </div>
-
-            
+            <!-- Section to upload profile photo -->
+<div>
+    <h3>Upload Profile Photo</h3>
+    <input type="file" (change)="uploadProfilePhoto($event)">
+  </div>
+  
+  <!-- Section to upload status photo -->
+  <div>
+    <h3>Upload Status Photo</h3>
+    <input type="file" (change)="uploadStatusPhoto($event)">
+  </div>
+            <!-- User Profile Info -->
+            <div class="card mb-3">
+                <div class="card-body">
+            <img src={{apiResponse}} alt="User Profile Image" class="img-fluid rounded-circle" width="250px" >
+            <!-- <img (src)="apiResponse" alt="User Profile Image" class="img-fluid rounded-circle" width="250px" > -->
+                </div>
+            </div> 
         </div>
     </div>
 
