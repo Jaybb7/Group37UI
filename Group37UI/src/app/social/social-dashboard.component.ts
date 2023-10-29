@@ -19,7 +19,7 @@ export class SocialDashboardComponent implements OnInit {
 
   constructor(
     private socialDataService: SocialDataService,
-    private formBuilder: FormBuilder // Inject FormBuilder
+    private formBuilder: FormBuilder 
   ) {
     this.newPostForm = this.formBuilder.group({
       postTitle: [''],
@@ -43,7 +43,7 @@ export class SocialDashboardComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // Attempt to fetch user profile from the backend using Axios
+    
     axios
       .get('/api/user/profile')
       .then((response) => {
@@ -51,7 +51,7 @@ export class SocialDashboardComponent implements OnInit {
       })
       .catch((error) => {
         console.error('Error fetching user profile:', error);
-        // Handle error - Display dummy data for demo purposes
+        
         this.userProfile = {
           userName: 'John Doe',
           bio: 'Hello, I am John!',
@@ -59,7 +59,7 @@ export class SocialDashboardComponent implements OnInit {
         };
       });
 
-    // Attempt to fetch posts from the backend using Axios
+    
     axios
       .get('http://localhost:8080/post/getPost')
       .then((response) => {
@@ -67,7 +67,7 @@ export class SocialDashboardComponent implements OnInit {
       })
       .catch((error) => {
         console.error('Error fetching posts:', error);
-        // Handle error - Display dummy data for demo purposes
+        
         this.posts = [
           {
             authorName: 'Author 1',
@@ -82,7 +82,7 @@ export class SocialDashboardComponent implements OnInit {
         ];
       });
 
-    // Attempt to fetch friends list from the backend using Axios
+    
     axios
       .get('/api/friends')
       .then((response) => {
@@ -90,7 +90,7 @@ export class SocialDashboardComponent implements OnInit {
       })
       .catch((error) => {
         console.error('Error fetching friends list:', error);
-        // Handle error - Display dummy data for demo purposes
+    
         this.friendsList = ['Friend 1', 'Friend 2', 'Friend 3'];
       });
   }
@@ -103,18 +103,18 @@ export class SocialDashboardComponent implements OnInit {
         console.log('Post created:', response.data);
         this.newPostForm.reset();
 
-        // Fetch posts again to update the list with the newly created post
+        
         this.socialDataService.getPosts().subscribe((posts) => {
           this.posts = posts;
         });
 
-        // Show a success modal
+        
         this.showModal('Post created successfully.');
       })
       .catch((error) => {
         console.error('Error creating post:', error);
         
-        // Show an error modal
+       
         this.showModal('Error creating post. Please try again.');
       });
   }

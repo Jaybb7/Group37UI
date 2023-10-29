@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import axios from 'axios'; // Import Axios
+import axios from 'axios';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -16,9 +16,9 @@ export class ProfilePageComponent implements OnInit {
           name: "John Doe",
           age: 30,
           occupation: "Engineer",
-          // Add other properties as needed
+          
         },
-        // Add more business matches data objects as needed
+        
       ];
     
       datingMatchesData: any = [
@@ -26,9 +26,9 @@ export class ProfilePageComponent implements OnInit {
           name: "Jane Smith",
           age: 25,
           occupation: "Designer",
-          // Add other properties as needed
+          
         },
-        // Add more dating matches data objects as needed
+      
       ];
     
       socialMatchesData: any = [
@@ -36,9 +36,9 @@ export class ProfilePageComponent implements OnInit {
           name: "Alex Johnson",
           age: 28,
           occupation: "Social Media Manager",
-          // Add other properties as needed
+         
         },
-        // Add more social matches data objects as needed
+        
       ];
     
       potentialMatchesData: any = [
@@ -46,18 +46,18 @@ export class ProfilePageComponent implements OnInit {
           name: "Sarah Brown",
           age: 26,
           occupation: "Marketing Specialist",
-          // Add other properties as needed
+         
         },
-        // Add more potential matches data objects as needed
+       
       ];
     
       exploreGroupsData: any = [
         {
           groupName: "Tech Enthusiasts",
           interest: "Technology",
-          // Add other properties as needed
+          
         },
-        // Add more explore groups data objects as needed
+       
       ];
     
       companiesData: any = [
@@ -65,9 +65,9 @@ export class ProfilePageComponent implements OnInit {
           companyName: "ABC Corp",
           location: "New York",
           industry: "Technology",
-          // Add other properties as needed
+          
         },
-        // Add more companies data objects as needed
+       
       ];
     
       jobFeedData: any = [
@@ -75,9 +75,9 @@ export class ProfilePageComponent implements OnInit {
           jobTitle: "Software Engineer",
           company: "XYZ Tech",
           location: "San Francisco",
-          // Add other properties as needed
+         
         },
-        // can Add more job feed data objects as needed
+       
       ];
     
       chatData: any = [
@@ -86,16 +86,16 @@ export class ProfilePageComponent implements OnInit {
           age: 29,
           occupation: "Marketing Manager",
           recentMessage: "Hi there!",
-          // can Add other properties as needed
+         
         },
-        // can Add more chat data objects as needed
+       
       ];
     
       userProfileData: any = {
         fullName: "Your Name",
         age: 30,
         occupation: "Your Occupation",
-        // can Add other properties as needed
+       
       };
     
      
@@ -103,12 +103,12 @@ export class ProfilePageComponent implements OnInit {
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
       const userIdParam = params.get('userId');
-      if (userIdParam) { // Check if userIdParam is not null
-        this.userId = +userIdParam; // Convert string to number using '+'
+      if (userIdParam) {
+        this.userId = +userIdParam; 
         
-        // Fetch methods that depend on userId:
+        
         this.fetchUserProfile();
-        // Add other fetch calls that depend on userId if necessary.
+        
       } else {
         console.error('UserId not provided in the route.');
       }
@@ -131,8 +131,8 @@ export class ProfilePageComponent implements OnInit {
       })
       .catch((error) => {
         console.error('Failed to fetch business matches:', error);
-        // Use hardcoded data as a fallback
-        this.businessMatchesData = this.businessMatchesData; // Replace with hardcoded data
+        
+        this.businessMatchesData = this.businessMatchesData; 
       });
   }
 
@@ -143,7 +143,7 @@ export class ProfilePageComponent implements OnInit {
       })
       .catch((error) => {
         console.error('Failed to fetch dating matches:', error);
-        this.datingMatchesData = this.datingMatchesData; // Replace with hardcoded data
+        this.datingMatchesData = this.datingMatchesData; 
       });
   }
 
@@ -154,7 +154,7 @@ export class ProfilePageComponent implements OnInit {
       })
       .catch((error) => {
         console.error('Failed to fetch social matches:', error);
-        this.socialMatchesData = this.socialMatchesData; // Replace with hardcoded data
+        this.socialMatchesData = this.socialMatchesData; 
       });
   }
 
@@ -165,7 +165,7 @@ export class ProfilePageComponent implements OnInit {
       })
       .catch((error) => {
         console.error('Failed to fetch potential matches:', error);
-        this.potentialMatchesData = this.potentialMatchesData; // Replace with hardcoded data
+        this.potentialMatchesData = this.potentialMatchesData;
       });
   }
 
@@ -176,7 +176,7 @@ export class ProfilePageComponent implements OnInit {
       })
       .catch((error) => {
         console.error('Failed to fetch explore groups:', error);
-        this.exploreGroupsData = this.exploreGroupsData; // Replace with hardcoded data
+        this.exploreGroupsData = this.exploreGroupsData; 
       });
   }
 
@@ -187,7 +187,7 @@ export class ProfilePageComponent implements OnInit {
       })
       .catch((error) => {
         console.error('Failed to fetch companies:', error);
-        this.companiesData = this.companiesData; // Replace with hardcoded data
+        this.companiesData = this.companiesData;
       });
   }
 
@@ -198,7 +198,7 @@ export class ProfilePageComponent implements OnInit {
       })
       .catch((error) => {
         console.error('Failed to fetch job feed:', error);
-        this.jobFeedData = this.jobFeedData; // Replace with hardcoded data
+        this.jobFeedData = this.jobFeedData; 
       });
   }
 
@@ -209,7 +209,7 @@ export class ProfilePageComponent implements OnInit {
       })
       .catch((error) => {
         console.error('Failed to fetch chat data:', error);
-        this.chatData = this.chatData; // Replace with hardcoded data
+        this.chatData = this.chatData; 
       });
   }
 
@@ -238,14 +238,14 @@ private uploadPhoto(event: any, url: string) {
       });
 }
 
-fetchUserProfile() { // Removed the userId parameter
+fetchUserProfile() { 
     axios.get(`/userprofile/${this.userId}`)
       .then((response) => {
         this.userProfileData = response.data.data;
       })
       .catch((error) => {
         console.error('Failed to fetch user profile:', error);
-        this.userProfileData = this.userProfileData; // This line seems redundant as you're setting the variable to its current value
+        this.userProfileData = this.userProfileData; 
       });
 }
 generateAvatar(event: any) {
@@ -262,7 +262,7 @@ generateAvatar(event: any) {
         var base64Image = event.target.result as string;
         base64Image = base64Image.split(',')[1];
 
-        // Make an HTTP GET request to the REST API
+        
         axios.post('http://localhost:8080/avatar/generate', base64Image, {
           headers: {
             'Content-Type': 'application/json'

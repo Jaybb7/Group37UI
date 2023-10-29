@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import axios from 'axios'; 
-import { ActivatedRoute } from '@angular/router'; // Import ActivatedRoute
+import { ActivatedRoute } from '@angular/router'; 
 
 @Component({
   selector: 'app-questions-dashboard',
@@ -12,13 +12,13 @@ export class QuestionsDashboardComponent implements OnInit {
   profileScore: number | null = null;
   userAnswers: { [key: string]: string } = {};
   currentPurpose: string = "null";
-  constructor(private route: ActivatedRoute) { } // Inject ActivatedRoute
+  constructor(private route: ActivatedRoute) { } 
   testAnswer1: string ="null";
   testAnswer2: string ="null";
   testAnswer3: string ="null";
   userId: string = "null";
   ngOnInit() {
-    // Fetch purpose from the query parameters and then call fetchQuestions
+   
     this.route.queryParams.subscribe(params => {
       this.currentPurpose = params['purpose'];
       this.userId = params['userId'];
@@ -55,12 +55,12 @@ export class QuestionsDashboardComponent implements OnInit {
   }
 
   calculateProfileScore() {
-    // Calculate profile score (dummy score for demonstration purposes)
+    
     this.profileScore = 75;
   }
 
   getProfileScore() {
-    // Replace 'your_openai_api_endpoint' with the actual API endpoint for sending user answers
+   
     const openaiEndpoint = `http://localhost:8080/gcp/askGCP?purpose=${this.currentPurpose}&answer1=${this.testAnswer1}&answer2=${this.testAnswer2}&answer3=${this.testAnswer3}&userId=${this.userId}`;
 
     axios.post(openaiEndpoint)

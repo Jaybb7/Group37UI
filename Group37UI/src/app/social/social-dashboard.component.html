@@ -5,15 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Profile Page</title>
-    <!-- Include your CSS and JavaScript dependencies here if needed -->
+    
 </head>
 
 <body>
     <div class="container mt-5">
         <div class="row">
-            <!-- Left Sidebar - User Profile -->
+           
             <div class="col-md-3">
-                <!-- User Profile Info -->
+                
                 <div class="card mb-3">
                     <div class="card-body">
                         <img [src]="userProfile.profileImageUrl" alt="User Profile Image" class="img-fluid rounded-circle">
@@ -22,28 +22,28 @@
                     </div>
                 </div>
 
-                <!-- Friends List (you can fetch this dynamically from a service) -->
+                
                 <div class="card mb-3">
                     <div class="card-body">
                         <h5 class="card-title">Friends</h5>
                         <ul class="list-group">
                             <li class="list-group-item" *ngFor="let friend of friendsList">{{ friend }}</li>
-                            <!-- Add more friends here -->
+                            
                         </ul>
                     </div>
                 </div>
             </div>
 
-            <!-- Main Content - News Feed -->
+            
             <div class="col-md-6">
                 
 
-                <!-- Create Post Section -->
+                
                 <div class="card mb-3">
                     <div class="card-body">
                         <h5 class="card-title">Create a Post</h5>
 
-                        <!-- Updated Form Fields to match backend structure -->
+                        
                         <input type="text" class="form-control mb-2" placeholder="Post Title" formControlName="postTitle">
                         <input type="text" class="form-control mb-2" placeholder="Post Benefits" formControlName="postBenefits">
                         <input type="text" class="form-control mb-2" placeholder="Post Salary" formControlName="postSalary">
@@ -57,10 +57,10 @@
                     </div>
                 </div>
 
-                <!-- Display Posts (you can fetch these dynamically from a service) -->
+               
                 <div class="card mb-3" *ngFor="let post of posts">
                     <div class="card-body">
-                        <!-- Sample Post -->
+                       
                         <div class="media">
                             <img [src]="post.authorImageUrl" alt="Post Author" class="mr-3 rounded-circle" style="width: 50px;">
                             <div class="media-body">
@@ -68,20 +68,20 @@
                                 <p>{{ post.content }}</p>
                             </div>
                         </div>
-                        <!-- Add more posts here -->
+                       
                     </div>
                 </div>
             </div>
 
-            <!-- Right Sidebar - Ads or Suggestions -->
+            
             <div class="col-md-3">
-                <!-- Advertisement or Suggestions here -->
+               
             </div>
         </div>
     </div>
-    <!--... Rest of your HTML remains the same ...-->
+    
 
-<!-- Modal structure -->
+
 <div class="modal" tabindex="-1" role="dialog" [class.show]="isModalVisible" [style.display]="isModalVisible ? 'block' : 'none'">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -98,7 +98,7 @@
     </div>
   </div>
   
-    <!-- Include your JavaScript or Angular scripts here if needed -->
+    
 </body>
 
 </html>

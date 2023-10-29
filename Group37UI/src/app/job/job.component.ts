@@ -89,13 +89,13 @@ export class JobDashboardComponent implements OnInit {
         this.newJobPostForm.reset();
         this.fetchJobPosts();
 
-        // Show a success modal
+       
         this.showModal('Post created successfully.');
       })
       .catch((error) => {
         console.error('Error creating job post:', error);
 
-        // Show an error modal
+        
         this.showModal('Error creating post. Please try again.');
       });
   }

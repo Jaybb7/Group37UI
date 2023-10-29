@@ -6,7 +6,7 @@
 </div>
 <button (click)="fetchQuestions()" class="btn btn-primary">Get Questions</button>
 
-<!-- Add a form for user answers -->
+
 <form (submit)="getProfileScore()" class="mt-3">
   <div *ngFor="let question of questions; let i = index">
     <label>{{ question }}</label>

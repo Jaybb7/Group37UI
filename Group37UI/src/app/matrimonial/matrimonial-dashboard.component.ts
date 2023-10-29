@@ -8,8 +8,8 @@ import { DUMMY_IMAGE } from 'src/environment';
   styleUrls: ['./matrimonial.css']
 })
 export class MatrimonialComponent implements OnInit {
-  matrimonialProfile: any = {}; // Initialize with an empty profile
-  similarProfiles: any[] = []; // Initialize with an empty array
+  matrimonialProfile: any = {}; 
+  similarProfiles: any[] = []; 
 
   constructor() { }
 
@@ -19,7 +19,7 @@ export class MatrimonialComponent implements OnInit {
   }
 
   loadMatrimonialProfile() {
-    // Fetch the matrimonial profile from the API (replace '1' with the actual profile ID)
+   
     axios.get('YOUR_API_BASE_URL/matrimonial/1')
       .then((response) => {
         this.matrimonialProfile = response.data;
@@ -36,7 +36,7 @@ export class MatrimonialComponent implements OnInit {
   }
 
   loadSimilarProfiles() {
-    // Fetch similar profiles from the API (you can specify criteria)
+    
     axios.get('YOUR_API_BASE_URL/similar-profiles')
       .then((response) => {
         this.similarProfiles = response.data;
@@ -47,7 +47,6 @@ export class MatrimonialComponent implements OnInit {
   }
 
   sendMessage() {
-    // Implement sending messages to matrimonial profiles
-    // You can use the matrimonialProfile data for sending messages
+   
   }
 }
