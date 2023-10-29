@@ -3,7 +3,6 @@ import axios from 'axios';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { DUMMY_IMAGE } from 'src/environment';
 
-
 @Component({
   selector: 'app-job-dashboard',
   templateUrl: './job.html',
@@ -48,7 +47,16 @@ export class JobDashboardComponent implements OnInit {
   fetchUserProfile() {
     axios.get('/api/user/profile')
       .then((response) => {
-        this.userProfile = response.data;
+        try {
+          this.userProfile = response.data;
+        } catch (e) {
+          console.warn('Unexpected response structure:', response.data);
+          this.userProfile = {
+            userName: 'John Doe',
+            jobTitle: 'Software Engineer',
+            profileImageUrl: DUMMY_IMAGE,
+          };
+        }
       })
       .catch((error) => {
         console.error('Error fetching user profile:', error);
@@ -63,7 +71,12 @@ export class JobDashboardComponent implements OnInit {
   fetchJobPosts() {
     axios.get('http://localhost:8080/post/getPost')
       .then((response) => {
-        this.jobPosts = response.data.data;
+        try {
+          this.jobPosts = response.data.data;
+        } catch (e) {
+          console.warn('Unexpected response structure:', response.data);
+          this.jobPosts = [];
+        }
       })
       .catch((error) => {
         console.error('Error fetching job posts:', error);
@@ -74,7 +87,12 @@ export class JobDashboardComponent implements OnInit {
   fetchConnections() {
     axios.get('/api/connections')
       .then((response) => {
-        this.connections = response.data;
+        try {
+          this.connections = response.data;
+        } catch (e) {
+          console.warn('Unexpected response structure:', response.data);
+          this.connections = ['Connection 1', 'Connection 2', 'Connection 3'];
+        }
       })
       .catch((error) => {
         console.error('Error fetching connections:', error);
@@ -88,14 +106,10 @@ export class JobDashboardComponent implements OnInit {
         console.log('Job post created:', response.data);
         this.newJobPostForm.reset();
         this.fetchJobPosts();
-
-       
         this.showModal('Post created successfully.');
       })
       .catch((error) => {
         console.error('Error creating job post:', error);
-
-        
         this.showModal('Error creating post. Please try again.');
       });
   }

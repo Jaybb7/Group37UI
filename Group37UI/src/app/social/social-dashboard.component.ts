@@ -3,6 +3,7 @@ import axios from 'axios';
 import { SocialDataService } from './social-data.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { DUMMY_IMAGE } from 'src/environment';
+
 @Component({
   selector: 'app-social-dashboard',
   templateUrl: './social-dashboard.component.html',
@@ -43,15 +44,22 @@ export class SocialDashboardComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    
     axios
       .get('/api/user/profile')
       .then((response) => {
-        this.userProfile = response.data;
+        try {
+          this.userProfile = response.data;
+        } catch (e) {
+          console.warn('Unexpected response structure:', response.data);
+          this.userProfile = {
+            userName: 'John Doe',
+            bio: 'Hello, I am John!',
+            profileImageUrl: DUMMY_IMAGE,
+          };
+        }
       })
       .catch((error) => {
         console.error('Error fetching user profile:', error);
-        
         this.userProfile = {
           userName: 'John Doe',
           bio: 'Hello, I am John!',
@@ -59,15 +67,29 @@ export class SocialDashboardComponent implements OnInit {
         };
       });
 
-    
     axios
       .get('http://localhost:8080/post/getPost')
       .then((response) => {
-        this.posts = response.data;
+        try {
+          this.posts = response.data;
+        } catch (e) {
+          console.warn('Unexpected response structure:', response.data);
+          this.posts = [
+            {
+              authorName: 'Author 1',
+              authorImageUrl: 'dummy-author-image-url',
+              content: 'Sample post content 1',
+            },
+            {
+              authorName: 'Author 2',
+              authorImageUrl: 'dummy-author-image-url',
+              content: 'Sample post content 2',
+            },
+          ];
+        }
       })
       .catch((error) => {
         console.error('Error fetching posts:', error);
-        
         this.posts = [
           {
             authorName: 'Author 1',
@@ -82,18 +104,22 @@ export class SocialDashboardComponent implements OnInit {
         ];
       });
 
-    
     axios
       .get('/api/friends')
       .then((response) => {
-        this.friendsList = response.data;
+        try {
+          this.friendsList = response.data;
+        } catch (e) {
+          console.warn('Unexpected response structure:', response.data);
+          this.friendsList = ['Friend 1', 'Friend 2', 'Friend 3'];
+        }
       })
       .catch((error) => {
         console.error('Error fetching friends list:', error);
-    
         this.friendsList = ['Friend 1', 'Friend 2', 'Friend 3'];
       });
   }
+
   createPost() {
     const formData = this.newPostForm.value;
 
@@ -103,18 +129,14 @@ export class SocialDashboardComponent implements OnInit {
         console.log('Post created:', response.data);
         this.newPostForm.reset();
 
-        
         this.socialDataService.getPosts().subscribe((posts) => {
           this.posts = posts;
         });
 
-        
         this.showModal('Post created successfully.');
       })
       .catch((error) => {
         console.error('Error creating post:', error);
-        
-       
         this.showModal('Error creating post. Please try again.');
       });
   }
