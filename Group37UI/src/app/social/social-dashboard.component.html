@@ -5,100 +5,110 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Profile Page</title>
-    
+
 </head>
 
 <body>
     <div class="container mt-5">
         <div class="row">
-           
+
             <div class="col-md-3">
-                
+
                 <div class="card mb-3">
                     <div class="card-body">
-                        <img [src]="userProfile.profileImageUrl" alt="User Profile Image" class="img-fluid rounded-circle">
+                        <img [src]="userProfile.profileImageUrl" alt="User Profile Image"
+                            class="img-fluid rounded-circle">
                         <h5 class="card-title">{{ userProfile.userName }}</h5>
                         <p class="card-text">{{ userProfile.bio }}</p>
                     </div>
                 </div>
 
-                
+
                 <div class="card mb-3">
                     <div class="card-body">
                         <h5 class="card-title">Friends</h5>
                         <ul class="list-group">
                             <li class="list-group-item" *ngFor="let friend of friendsList">{{ friend }}</li>
-                            
+
                         </ul>
                     </div>
                 </div>
             </div>
 
-            
-            <div class="col-md-6">
-                
 
-                
+            <div class="col-md-6">
+
+
+
                 <div class="card mb-3">
                     <div class="card-body">
                         <h5 class="card-title">Create a Post</h5>
 
-                        
-                        <input type="text" class="form-control mb-2" placeholder="Post Title" formControlName="postTitle">
-                        <input type="text" class="form-control mb-2" placeholder="Post Benefits" formControlName="postBenefits">
-                        <input type="text" class="form-control mb-2" placeholder="Post Salary" formControlName="postSalary">
-                        <textarea class="form-control mb-2" rows="2" placeholder="Description" formControlName="desc"></textarea>
-                        <textarea class="form-control mb-2" rows="2" placeholder="Requirements" formControlName="requirements"></textarea>
-                        <input type="text" class="form-control mb-2" placeholder="Post Location" formControlName="postLocation">
-                        <input type="text" class="form-control mb-2" placeholder="Point of Contact" formControlName="postPointOfContact">
-                        <input type="text" class="form-control mb-2" placeholder="User ID" formControlName="userId">
-
-                        <button class="btn btn-primary mt-2" (click)="createPost()">Post</button>
+                        <form [formGroup]="newPostForm">
+                            <input type="text" class="form-control mb-2" placeholder="Post Title"
+                                formControlName="postTitle">
+                            <input type="text" class="form-control mb-2" placeholder="Post Benefits"
+                                formControlName="postBenefits">
+                            <input type="text" class="form-control mb-2" placeholder="Post Salary"
+                                formControlName="postSalary">
+                            <textarea class="form-control mb-2" rows="2" placeholder="Description"
+                                formControlName="desc"></textarea>
+                            <textarea class="form-control mb-2" rows="2" placeholder="Requirements"
+                                formControlName="requirements"></textarea>
+                            <input type="text" class="form-control mb-2" placeholder="Post Location"
+                                formControlName="postLocation">
+                            <input type="text" class="form-control mb-2" placeholder="Point of Contact"
+                                formControlName="postPointOfContact">
+                            <input type="text" class="form-control mb-2" placeholder="User ID" formControlName="userId">
+                            <button class="btn btn-primary mt-2" (click)="createPost()">Post</button>
+                        </form>
                     </div>
                 </div>
 
-               
+
                 <div class="card mb-3" *ngFor="let post of posts">
                     <div class="card-body">
-                       
+
                         <div class="media">
-                            <img [src]="post.authorImageUrl" alt="Post Author" class="mr-3 rounded-circle" style="width: 50px;">
+                            <img [src]="post.authorImageUrl" alt="Post Author" class="mr-3 rounded-circle"
+                                style="width: 50px;">
                             <div class="media-body">
                                 <h5 class="mt-0">{{ post.authorName }}</h5>
                                 <p>{{ post.content }}</p>
                             </div>
                         </div>
-                       
+
                     </div>
                 </div>
             </div>
 
-            
+
             <div class="col-md-3">
-               
+
             </div>
         </div>
     </div>
-    
 
 
-<div class="modal" tabindex="-1" role="dialog" [class.show]="isModalVisible" [style.display]="isModalVisible ? 'block' : 'none'">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Notification</h5>
+
+    <div class="modal" tabindex="-1" role="dialog" [class.show]="isModalVisible"
+        [style.display]="isModalVisible ? 'block' : 'none'">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Notification</h5>
+                </div>
+                <div class="modal-body">
+                    <p>{{ modalMessage }}</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" (click)="closeModal()">Close</button>
+                </div>
+            </div>
         </div>
-        <div class="modal-body">
-          <p>{{ modalMessage }}</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" (click)="closeModal()">Close</button>
-        </div>
-      </div>
     </div>
-  </div>
-  
-    
+
+
 </body>
 
 </html>

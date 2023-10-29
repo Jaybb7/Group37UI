@@ -13,6 +13,7 @@ import { AuthService } from './services/Auth/auth.service';
 import { QuestionsDashboardComponent } from './questions-dashboard/questions-dashboard.component';
 import { FormsModule } from '@angular/forms';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { SocialDashboardComponent } from './social/social-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -20,14 +21,15 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    QuestionsDashboardComponent
+    QuestionsDashboardComponent,
+    SocialDashboardComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     HttpClientModule,
     OAuthModule.forRoot(),
-    ReactiveFormsModule,
     FormsModule
   ],
   providers: [ConfigService,AuthService],

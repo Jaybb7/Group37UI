@@ -13,8 +13,7 @@ export class SocialDashboardComponent implements OnInit {
   userProfile: any;
   posts: any[] = [];
   friendsList: string[] = [];
-  newPostForm: FormGroup;
-
+  newPostForm!: FormGroup;
   isModalVisible = false;
   modalMessage = '';
 
@@ -22,16 +21,7 @@ export class SocialDashboardComponent implements OnInit {
     private socialDataService: SocialDataService,
     private formBuilder: FormBuilder 
   ) {
-    this.newPostForm = this.formBuilder.group({
-      postTitle: [''],
-      postBenefits: [''],
-      postSalary: [''],
-      desc: [''],
-      requirements: [''],
-      postLocation: [''],
-      postPointOfContact: [''],
-      userId: ['']
-    });
+    
   }
 
   showModal(message: string) {
@@ -117,6 +107,16 @@ export class SocialDashboardComponent implements OnInit {
       .catch((error) => {
         console.error('Error fetching friends list:', error);
         this.friendsList = ['Friend 1', 'Friend 2', 'Friend 3'];
+      });
+      this.newPostForm = this.formBuilder.group({
+        postTitle: [''],
+        postBenefits: [''],
+        postSalary: [''],
+        desc: [''],
+        requirements: [''],
+        postLocation: [''],
+        postPointOfContact: [''],
+        userId: ['']
       });
   }
 
