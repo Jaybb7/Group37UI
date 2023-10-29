@@ -3,6 +3,7 @@ import axios from 'axios';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { DUMMY_IMAGE } from 'src/environment';
 
+
 @Component({
   selector: 'app-job-dashboard',
   templateUrl: './job.html',
@@ -13,6 +14,17 @@ export class JobDashboardComponent implements OnInit {
   jobPosts: PostModel[] = [];
   connections: string[] = [];
   newJobPostForm: FormGroup;
+  isModalVisible = false;
+  modalMessage = '';
+
+  showModal(message: string) {
+    this.modalMessage = message;
+    this.isModalVisible = true;
+  }
+
+  closeModal() {
+    this.isModalVisible = false;
+  }
 
   constructor(private formBuilder: FormBuilder) {
     this.newJobPostForm = this.formBuilder.group({
@@ -74,12 +86,17 @@ export class JobDashboardComponent implements OnInit {
     axios.post('http://localhost:8080/post/setPost', this.newJobPostForm.value)
       .then((response) => {
         console.log('Job post created:', response.data);
-
         this.newJobPostForm.reset();
         this.fetchJobPosts();
+
+        // Show a success modal
+        this.showModal('Post created successfully.');
       })
       .catch((error) => {
         console.error('Error creating job post:', error);
+
+        // Show an error modal
+        this.showModal('Error creating post. Please try again.');
       });
   }
 }

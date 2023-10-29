@@ -13,6 +13,10 @@ export class SocialDashboardComponent implements OnInit {
   posts: any[] = [];
   friendsList: string[] = [];
   newPostForm: FormGroup;
+
+  isModalVisible = false;
+  modalMessage = '';
+
   constructor(
     private socialDataService: SocialDataService,
     private formBuilder: FormBuilder // Inject FormBuilder
@@ -29,6 +33,14 @@ export class SocialDashboardComponent implements OnInit {
     });
   }
 
+  showModal(message: string) {
+    this.modalMessage = message;
+    this.isModalVisible = true;
+  }
+
+  closeModal() {
+    this.isModalVisible = false;
+  }
 
   ngOnInit(): void {
     // Attempt to fetch user profile from the backend using Axios
@@ -95,9 +107,15 @@ export class SocialDashboardComponent implements OnInit {
         this.socialDataService.getPosts().subscribe((posts) => {
           this.posts = posts;
         });
+
+        // Show a success modal
+        this.showModal('Post created successfully.');
       })
       .catch((error) => {
         console.error('Error creating post:', error);
+        
+        // Show an error modal
+        this.showModal('Error creating post. Please try again.');
       });
   }
 }

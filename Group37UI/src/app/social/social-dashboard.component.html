@@ -36,6 +36,7 @@
 
             <!-- Main Content - News Feed -->
             <div class="col-md-6">
+                
 
                 <!-- Create Post Section -->
                 <div class="card mb-3">
@@ -78,6 +79,25 @@
             </div>
         </div>
     </div>
+    <!--... Rest of your HTML remains the same ...-->
+
+<!-- Modal structure -->
+<div class="modal" tabindex="-1" role="dialog" [class.show]="isModalVisible" [style.display]="isModalVisible ? 'block' : 'none'">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Notification</h5>
+        </div>
+        <div class="modal-body">
+          <p>{{ modalMessage }}</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" (click)="closeModal()">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
     <!-- Include your JavaScript or Angular scripts here if needed -->
 </body>
 
