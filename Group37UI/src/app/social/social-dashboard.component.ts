@@ -58,7 +58,7 @@ export class SocialDashboardComponent implements OnInit {
       });
 
     axios
-      .get('http://localhost:8080/post/getPost')
+      .get('http://localhost:8080/post/getAllPost')
       .then((response) => {
         try {
           this.posts = response.data;
@@ -122,7 +122,8 @@ export class SocialDashboardComponent implements OnInit {
 
   createPost() {
     const formData = this.newPostForm.value;
-
+    console.log("iam here")
+   console.log(formData)
     axios
       .post('http://localhost:8080/post/setPost', formData)
       .then((response) => {

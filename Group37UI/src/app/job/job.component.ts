@@ -69,7 +69,7 @@ export class JobDashboardComponent implements OnInit {
   }
 
   fetchJobPosts() {
-    axios.get('http://localhost:8080/post/getPost')
+    axios.get('http://localhost:8080/post/getAllPost')
       .then((response) => {
         try {
           this.jobPosts = response.data.data;
