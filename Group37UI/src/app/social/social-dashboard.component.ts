@@ -49,7 +49,7 @@ export class SocialDashboardComponent implements OnInit {
 
     // Attempt to fetch posts from the backend using Axios
     axios
-      .get('http://localhost:4200/post/getPost')
+      .get('http://localhost:8080/post/getPost')
       .then((response) => {
         this.posts = response.data;
       })
@@ -86,7 +86,7 @@ export class SocialDashboardComponent implements OnInit {
     const formData = this.newPostForm.value;
 
     axios
-      .post('http://localhost:4200/post/setPost', formData)
+      .post('http://localhost:8080/post/setPost', formData)
       .then((response) => {
         console.log('Post created:', response.data);
         this.newPostForm.reset();

@@ -34,8 +34,8 @@ export class QuestionsDashboardComponent implements OnInit {
       .then((response) => {
         const data = response.data;
 
-        if (data.questions && data.questions.length > 0) {
-          this.questions = data.questions;
+        if (data && data.length > 0) {
+          this.questions = data;
         } else {
           this.provideDummyQuestions();
         }

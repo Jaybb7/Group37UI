@@ -13,6 +13,7 @@ export class DocumentGenerator {
   constructor() { }
 
   sendInformationToBackend(value: string) {
+    console.log(value)
     axios.get('http://localhost:8080/ai/generateDocument', {
       params: {
         information: value
